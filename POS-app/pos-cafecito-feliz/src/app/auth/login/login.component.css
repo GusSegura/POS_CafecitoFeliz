@@ -1,0 +1,12 @@
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.bi-cup-hot-fill {
+  font-size: 2rem;
+  color: #6f4e37;
+}

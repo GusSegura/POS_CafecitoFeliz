@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <i class="bi bi-cup-hot-fill"></i> Cafetería POS
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2"></i> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ventas" routerLinkActive="active">
+            <i class="bi bi-cart-check"></i> Punto de Venta
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/clientes" routerLinkActive="active">
+            <i class="bi bi-people"></i> Clientes
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos" routerLinkActive="active">
+            <i class="bi bi-box"></i> Productos
+          </a>
+        </li>
+      </ul>
+      
+      <div class="d-flex align-items-center text-white">
+        <span class="me-3">
+          <i class="bi bi-person-circle"></i>
+          {{ (authService.user$ | async)?.nombre || 'Usuario' }}
+        </span>
+        <button class="btn btn-outline-light btn-sm" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i> Salir
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
