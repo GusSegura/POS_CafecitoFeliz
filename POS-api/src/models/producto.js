@@ -23,8 +23,12 @@ const productoSchema = new mongoose.Schema({
   },
   categoria: {
     type: String,
-    enum: ['bebida', 'alimento', 'postre', 'otro'],
+    enum: ['café','bebida', 'alimento', 'postre', 'otro'],
     default: 'otro'
+  },
+    imagen: {
+    type: String,
+    default: '/uploads/productos/default-producto.png'  // Imagen por defecto
   },
   activo: {
     type: Boolean,

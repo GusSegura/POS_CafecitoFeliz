@@ -19,12 +19,12 @@ export class ProductoService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  crearProducto(producto: any): Observable<any> {
-    return this.http.post(this.apiUrl, producto);
+  crearProducto(productoData: FormData): Observable<any> {
+    return this.http.post(this.apiUrl, productoData);
   }
 
-  actualizarProducto(id: string, producto: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, producto);
+  actualizarProducto(id: string, productoData: FormData | any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, productoData);
   }
 
   eliminarProducto(id: string): Observable<any> {
