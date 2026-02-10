@@ -5,6 +5,8 @@ import { ProductoService } from '../../../core/services/producto/producto.servic
 import { ClienteService } from '../../../core/services/cliente/cliente.service';
 import { ToastrService } from 'ngx-toastr';
 import { VentaService } from '../../../core/services/venta/venta.service';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 
 interface CartItem {
@@ -200,6 +202,7 @@ const detalles = this.carrito.map(item => ({
   // Llamada al Backend
   this.ventaService.crearVenta(ventaData).subscribe({
     next: (res) => {
+      this.imprimirTicket(res.venta);
       const msg = this.clienteSeleccionado 
       ? `Registrada a: ${this.clienteSeleccionado.nombre}` 
       : 'A Público General';
@@ -225,6 +228,72 @@ limpiarCarrito() {
   this.carrito = [];
   this.clienteSeleccionado = null;
   this.busquedaCliente = '';
+}
+
+
+imprimirTicket(venta: any) {
+  const doc = new jsPDF({
+    unit: 'mm',
+    format: [80, 150] // Formato  de ticket 80mm
+  });
+
+  // --- Encabezado ---
+  doc.setFontSize(14);
+  doc.text('CAFECITO FELIZ', 40, 10, { align: 'center' });
+  doc.setFontSize(8);
+  doc.text('RFC: CAFE123456789', 40, 15, { align: 'center' });
+  doc.text('Madero #347-B, Centro', 40, 19, { align: 'center' });
+  doc.text('------------------------------------------', 40, 23, { align: 'center' });
+
+  // --- Información de la Venta ---
+  doc.setFontSize(9);
+  doc.text(`Ticket: ${venta._id.substring(venta._id.length - 6).toUpperCase()}`, 5, 28);
+  doc.text(`Fecha: ${new Date(venta.createdAt).toLocaleString()}`, 5, 33);
+  const nombreCliente = venta.cliente ? venta.cliente.nombre : 'Público General';
+  doc.text(`Cliente: ${nombreCliente}`, 5, 38);
+  doc.text('------------------------------------------', 40, 43, { align: 'center' });
+
+  // --- Tabla de Productos ---
+  autoTable(doc, {
+    startY: 45,
+    margin: { left: 5, right: 5 },
+    theme: 'plain',
+    head: [['Cant', 'Producto', 'Total']],
+    body: venta.productos.map((p: any) => [
+      p.cantidad,
+      p.producto.nombre || p.nombre, //  p.nombre si el populate no está completo
+      `$${p.subtotal.toFixed(2)}`
+    ]),
+    styles: { fontSize: 7, cellPadding: 1 },
+    headStyles: { fillColor: [240, 240, 240], textColor: [0, 0, 0], fontStyle: 'bold' }
+  });
+
+  // --- Totales ---
+  const finalY = (doc as any).lastAutoTable.finalY + 5;
+  doc.setFontSize(9);
+  doc.text(`Subtotal:`, 45, finalY);
+  doc.text(`$${venta.subtotal.toFixed(2)}`, 75, finalY, { align: 'right' });
+
+  if (venta.descuentoMonto > 0) {
+    doc.setTextColor(200, 0, 0); // Rojo para el descuento
+    doc.text(`Desc. (${venta.descuentoPorcentaje}%):`, 45, finalY + 5);
+    doc.text(`-$${venta.descuentoMonto.toFixed(2)}`, 75, finalY + 5, { align: 'right' });
+    doc.setTextColor(0, 0, 0);
+  }
+
+  doc.setFontSize(11);
+  doc.setFont('', 'bold'); // negrita para el total
+  doc.text(`TOTAL:`, 45, finalY + 12);
+  doc.text(`$${venta.total.toFixed(2)}`, 75, finalY + 12, { align: 'right' });
+
+  // --- Pie de página ---
+  doc.setFontSize(8);
+  doc.setFont('', 'normal');
+  doc.text('¡Gracias por tu compra!', 40, finalY + 22, { align: 'center' });
+  doc.text('¡Entre mas compras, mas descuentos!', 40, finalY + 26, { align: 'center' });
+
+  // Abrir en nueva pestaña para imprimir
+  doc.output('dataurlnewwindow');
 }
 
 }
