@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { ProductoService } from '../../../core/services/producto/producto.service';
 import { ClienteService } from '../../../core/services/cliente/cliente.service';
+import { ToastrService } from 'ngx-toastr';
+import { VentaService } from '../../../core/services/venta/venta.service';
 
 
 interface CartItem {
@@ -33,7 +35,9 @@ export class PuntoVentaComponent implements OnInit {
 
   constructor(
     private productoService: ProductoService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private ventaService: VentaService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -168,6 +172,59 @@ export class PuntoVentaComponent implements OnInit {
   } else {
     this.productosFiltrados = this.productos.filter(p => p.categoria === categoria);
   }
+}
+
+procesarVenta() {
+
+  if (this.carrito.length === 0) {
+    this.toastr.warning('El carrito está vacío', 'Atención');
+    return;
+  }
+
+  // para que el backend reciba solo IDs y cantidades
+const detalles = this.carrito.map(item => ({
+    productoId: item.producto._id, 
+    cantidad: item.cantidad,
+    precioUnitario: item.producto.precio
+  }));
+
+  const ventaData = {
+    clienteId: this.clienteSeleccionado ? this.clienteSeleccionado._id : null,
+    productos: detalles,
+    metodoPago: 'efectivo',
+    subtotal: this.subtotal,
+    descuento: this.montoDescuento,
+    total: this.total
+  };
+
+  // Llamada al Backend
+  this.ventaService.crearVenta(ventaData).subscribe({
+    next: (res) => {
+      const msg = this.clienteSeleccionado 
+      ? `Registrada a: ${this.clienteSeleccionado.nombre}` 
+      : 'A Público General';
+
+
+    this.toastr.success(msg, '¡Venta Exitosa!');
+
+    // Limpiamos
+    this.limpiarCarrito(); 
+    this.cargarProductos();
+    this.cargarClientes();     
+
+    },
+    error: (err) => {
+      console.error('Detalle del error del servidor:', err.error);
+      this.toastr.error(err.error?.error || 'Error al procesar la venta', 'Error');
+    }
+  });
+}
+
+
+limpiarCarrito() {
+  this.carrito = [];
+  this.clienteSeleccionado = null;
+  this.busquedaCliente = '';
 }
 
 }

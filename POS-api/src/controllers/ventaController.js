@@ -74,24 +74,31 @@ const crearVenta = async (req, res) => {
   try {
     const { clienteId, productos, metodoPago } = req.body;
     
-    // Valida que vengan los datos requeridos
-    if (!clienteId || !productos || productos.length === 0) {
+    // 1. Validar que vengan productos (Es lo único estrictamente obligatorio ahora)
+    if (!productos || productos.length === 0) {
       return res.status(400).json({
         success: false,
-        error: 'Cliente y productos son obligatorios'
+        error: 'Los productos son obligatorios'
       });
     }
-    
-    // 1. Verifica que el cliente existe
-    const cliente = await Cliente.findById(clienteId);
-    if (!cliente) {
-      return res.status(404).json({
-        success: false,
-        error: 'Cliente no encontrado'
-      });
+
+    let cliente = null;
+    let descuentoPorcentaje = 0;
+
+    // 2. Lógica de Cliente Opcional
+    if (clienteId) {
+      cliente = await Cliente.findById(clienteId);
+      if (!cliente) {
+        return res.status(404).json({
+          success: false,
+          error: 'El cliente especificado no existe'
+        });
+      }
+      // Si el cliente existe, calculamos su descuento
+      descuentoPorcentaje = cliente.calcularDescuento();
     }
     
-    // 2. Valida stock y preparar productos de la venta
+    // 3. Validar stock y preparar lista de productos para la venta
     const productosVenta = [];
     const productosInsuficientes = [];
     
@@ -112,7 +119,6 @@ const crearVenta = async (req, res) => {
         });
       }
       
-      // Verifica stock suficiente
       if (!producto.hayStockSuficiente(item.cantidad)) {
         productosInsuficientes.push({
           nombre: producto.nombre,
@@ -130,7 +136,6 @@ const crearVenta = async (req, res) => {
       });
     }
     
-    // 3. Si hay productos con stock insuficiente, retorna error
     if (productosInsuficientes.length > 0) {
       return res.status(400).json({
         success: false,
@@ -139,45 +144,43 @@ const crearVenta = async (req, res) => {
       });
     }
     
-    // 4. Calcular descuento según las compras del cliente
-    const descuentoPorcentaje = cliente.calcularDescuento();
-    
-    // 5. Crear la venta
+    // 4. Crear la instancia de la Venta
     const venta = new Venta({
-      cliente: clienteId,
+      cliente: cliente ? cliente._id : null, // Si no hay cliente, se guarda como null
       productos: productosVenta,
-      descuentoPorcentaje,
+      descuentoPorcentaje: descuentoPorcentaje,
       metodoPago: metodoPago || 'efectivo'
     });
     
-    // 6. Calcular totales
+    // 5. Calcular totales usando el método del modelo
     venta.calcularTotales();
     
-    // 7. Guardar la venta
+    // 6. Guardar la venta
     await venta.save();
     
-    // 8. Reducir stock de los productos
+    // 7. Actualizar Inventario y contador del Cliente
     for (const item of productos) {
       const producto = await Producto.findById(item.productoId);
       producto.reducirStock(item.cantidad);
       await producto.save();
     }
     
-    // 9. Incrementar contador de compras del cliente
-    cliente.purchasesCount += 1;
-    await cliente.save();
+    // Solo incrementamos compras si el cliente existe
+    if (cliente) {
+      cliente.purchasesCount += 1;
+      await cliente.save();
+    }
     
-    // 10. Obtener la venta completa con populate
+    // 8. Respuesta final limpia
     const ventaCompleta = await Venta.findById(venta._id)
       .populate('cliente', 'nombre email purchasesCount')
       .populate('productos.producto', 'nombre categoria');
     
     res.status(201).json({
       success: true,
-      mensaje: 'Venta creada exitosamente',
+      mensaje: cliente ? `Venta registrada a ${cliente.nombre}` : 'Venta a Público General exitosa',
       venta: ventaCompleta,
-      descuentoAplicado: `${descuentoPorcentaje}%`,
-      proximoDescuento: `${cliente.calcularDescuento()}%`
+      descuentoAplicado: `${descuentoPorcentaje}%`
     });
     
   } catch (error) {
