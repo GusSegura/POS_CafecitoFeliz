@@ -4,7 +4,7 @@ const ventaSchema = new mongoose.Schema({
   cliente: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Cliente',
-    required: [true, 'El cliente es obligatorio']
+    required: false
   },
   productos: [{
     producto: {

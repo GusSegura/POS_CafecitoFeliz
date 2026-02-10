@@ -38,7 +38,25 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 80px;     /* tamaño táctil */
+  min-height: 80px;     
   padding: 0.5rem 0.25rem;
   text-align: center;
+}
+
+
+.pos-cart {
+  height: calc(80vh - 160px); /* ajusta altura del carrito */
+  position: sticky;
+  top: 1rem;
+}
+
+/* Área que scrollea */
+.pos-cart-items {
+  overflow-y: auto;
+}
+
+/* Footer siempre visible */
+.pos-cart-footer {
+  flex-shrink: 0;
+  background: #f8f9fa;
 }

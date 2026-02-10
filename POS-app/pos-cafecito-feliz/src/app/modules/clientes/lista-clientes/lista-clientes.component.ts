@@ -139,7 +139,7 @@ export class ListaClientesComponent implements OnInit {
       // Actualizar
       this.clienteService.actualizarCliente(this.currentClienteId, this.clienteForm).subscribe({
         next: (response) => {
-          this.toastr.success('Cliente actualizado correctamente', 'Éxito');
+          this.toastr.success('Cliente actualizado correctamente');
           this.loadClientes();
           this.closeModal();
         },
@@ -151,7 +151,7 @@ export class ListaClientesComponent implements OnInit {
       // Crear
       this.clienteService.crearCliente(this.clienteForm).subscribe({
         next: (response) => {
-          this.toastr.success('Cliente registrado correctamente', 'Éxito');
+          this.toastr.success('Cliente registrado correctamente');
           this.loadClientes();
           this.closeModal();
         },
@@ -177,7 +177,7 @@ export class ListaClientesComponent implements OnInit {
       if (result.isConfirmed) {
         this.clienteService.eliminarCliente(cliente._id).subscribe({
           next: () => {
-            this.toastr.success('Cliente eliminado correctamente', 'Éxito');
+            this.toastr.success('Cliente eliminado correctamente');
             this.loadClientes();
           },
           error: (error) => {
