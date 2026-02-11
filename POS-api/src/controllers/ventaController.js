@@ -246,31 +246,81 @@ const cancelarVenta = async (req, res) => {
 
 const obtenerEstadisticas = async (req, res) => {
   try {
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    
+    const inicioMes = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+    
+    // Estadísticas generales
     const totalVentas = await Venta.countDocuments({ estado: 'completada' });
     const ventasCanceladas = await Venta.countDocuments({ estado: 'cancelada' });
     
-    const ventasCompletadas = await Venta.find({ estado: 'completada' });
+    // Ventas de hoy
+    const ventasHoy = await Venta.countDocuments({
+      estado: 'completada',
+      fecha: { $gte: hoy }
+    });
     
+    // Ingresos
+    const ventasCompletadas = await Venta.find({ estado: 'completada' });
     const totalIngresos = ventasCompletadas.reduce((sum, venta) => sum + venta.total, 0);
     const totalDescuentos = ventasCompletadas.reduce((sum, venta) => sum + venta.descuentoMonto, 0);
     
+    // Ingresos del día
+    const ventasCompletadasHoy = await Venta.find({
+      estado: 'completada',
+      fecha: { $gte: hoy }
+    });
+    const ingresosHoy = ventasCompletadasHoy.reduce((sum, venta) => sum + venta.total, 0);
+    
+    // Ingresos del mes
+    const ventasMes = await Venta.find({
+      estado: 'completada',
+      fecha: { $gte: inicioMes }
+    });
+    const ingresosMes = ventasMes.reduce((sum, venta) => sum + venta.total, 0);
+    
+    // Top productos (necesitarías ajustar según tu modelo)
+    const topProductos = await Venta.aggregate([
+      { $match: { estado: 'completada' } },
+      { $unwind: '$productos' },
+      {
+        $group: {
+          _id: '$productos.producto',
+          cantidad: { $sum: '$productos.cantidad' },
+          ingresos: { $sum: { $multiply: ['$productos.cantidad', '$productos.precioUnitario'] } }
+        }
+      },
+      { $sort: { cantidad: -1 } },
+      { $limit: 5 },
+      {
+        $lookup: {
+          from: 'productos',
+          localField: '_id',
+          foreignField: '_id',
+          as: 'producto'
+        }
+      }
+    ]);
+
     res.json({
       success: true,
       estadisticas: {
         totalVentas,
         ventasCanceladas,
+        ventasHoy,
         totalIngresos: totalIngresos.toFixed(2),
+        ingresosHoy: ingresosHoy.toFixed(2),
+        ingresosMes: ingresosMes.toFixed(2),
         totalDescuentos: totalDescuentos.toFixed(2),
-        promedioVenta: totalVentas > 0 ? (totalIngresos / totalVentas).toFixed(2) : 0
+        promedioVenta: totalVentas > 0 ? (totalIngresos / totalVentas).toFixed(2) : 0,
+        topProductos
       }
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
+    res.status(500).json({ success: false, error: error.message });
   }
-};
+};  
 
 module.exports = {
   obtenerVentas,

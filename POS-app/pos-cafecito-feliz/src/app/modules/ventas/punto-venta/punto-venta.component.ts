@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { VentaService } from '../../../core/services/venta/venta.service';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { DashboardService } from '../../../core/services/dashboard/dashboard.service';
+
 
 
 interface CartItem {
@@ -27,7 +29,7 @@ export class PuntoVentaComponent implements OnInit {
   productos: any[] = [];
   productosFiltrados: any[] = [];
   carrito: CartItem[] = []; 
-  
+  stats: any = {ingresosHoy: 0, ingresosMes: 0, ventasHoy: 0};
 
   busquedaCliente: string = '';
   clienteSeleccionado: any = null;
@@ -39,12 +41,14 @@ export class PuntoVentaComponent implements OnInit {
     private productoService: ProductoService,
     private clienteService: ClienteService,
     private ventaService: VentaService,
+    private dashboardService: DashboardService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
     this.cargarProductos();
     this.cargarClientes();
+    this.cargarEstadisticas();
   }
 
 
@@ -213,7 +217,8 @@ const detalles = this.carrito.map(item => ({
     // Limpiamos
     this.limpiarCarrito(); 
     this.cargarProductos();
-    this.cargarClientes();     
+    this.cargarClientes();
+    this.cargarEstadisticas();   
 
     },
     error: (err) => {
@@ -230,6 +235,19 @@ limpiarCarrito() {
   this.busquedaCliente = '';
 }
 
+cargarEstadisticas() {
+  this.dashboardService.getEstadisticas().subscribe(res => {
+    this.stats = res.estadisticas;
+  });
+}
+
+getProgressPercentage(): number {
+  if (!this.stats.ingresosMes) return 0;
+  return Math.min(
+    (this.stats.ingresosHoy / this.stats.ingresosMes) * 100,
+    100
+  );
+}
 
 imprimirTicket(venta: any) {
   const doc = new jsPDF({
