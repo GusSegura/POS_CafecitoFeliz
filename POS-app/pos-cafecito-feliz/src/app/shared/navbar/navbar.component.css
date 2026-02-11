@@ -1,0 +1,52 @@
+.navbar {
+  padding-bottom: 0 !important;
+}
+
+.navbar-collapse {
+  padding-bottom: 0 !important;
+}
+
+
+.navbar-nav {
+  margin-bottom: 0;
+}
+
+
+.nav-item {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-tab {
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  margin: 0 2px;
+  padding: 0.6rem 1.2rem !important;
+  transition: all 0.3s ease;
+}
+
+
+.nav-tab:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pestaña activa - efecto de carpeta */
+.nav-tab.active {
+  background-color: #495057;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  border-bottom: 3px solid #6c757d;
+}
+
+/* Línea inferior para simular apertura de pestaña */
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #6c757d;
+}
