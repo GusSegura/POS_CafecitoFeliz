@@ -7,6 +7,9 @@ const {
   actualizarCliente,
   eliminarCliente
 } = require('../controllers/clienteController');
+const { authMiddleware } = require('../middlewares/authMiddleware');
+
+router.use(authMiddleware);
 
 router.get('/', obtenerClientes);           // GET /api/clientes
 router.get('/:id', obtenerClientePorId);    // GET /api/clientes/:id

@@ -9,6 +9,7 @@ const authRoutes = require('./src/routes/authRoutes');
 const clienteRoutes = require('./src/routes/clienteRoutes');
 const productoRoutes = require('./src/routes/productoRoutes');
 const ventaRoutes = require('./src/routes/ventaRoutes');
+const usuarioRoutes = require('./src/routes/usuarioRoutes');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/clientes', clienteRoutes);
 app.use('/api/productos', productoRoutes);
 app.use('/api/ventas', ventaRoutes);
+app.use('/api/users', usuarioRoutes);
 
 const PORT = process.env.PORT || 3000;
 

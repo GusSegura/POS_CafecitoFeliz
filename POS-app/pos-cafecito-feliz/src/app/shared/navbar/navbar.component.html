@@ -1,18 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <!-- Logo y nombre a la izquierda -->
-    <a class="navbar-brand d-flex align-items-center" routerLink="/dashboard">
-      <img src="/assets/img/cafecitosmile.png" width="55" height="35" alt="Cafecito Feliz" class="me-3">
+ 
+    <a class="navbar-brand d-flex align-items-center" routerLink="/dashboard" *ngIf="isAdmin()">
+      <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
       <span class="fw-bold">Cafecito Feliz</span>
     </a>
+    
+    <!-- Para cajeros, logo sin link al dashboard -->
+    <div class="navbar-brand d-flex align-items-center" *ngIf="!isAdmin()">
+      <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
+      <span class="fw-bold">Cafecito Feliz</span>
+    </div>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- Opciones del menú a la izquierda -->
-      <ul class="navbar-nav">
+      <!-- SOLO ADMIN -->
+      <ul class="navbar-nav" *ngIf="isAdmin()">
         <li class="nav-item">
           <a class="nav-link nav-tab" routerLink="/dashboard" routerLinkActive="active">
             <i class="bi bi-speedometer2"></i> Dashboard
@@ -28,9 +34,23 @@
             <i class="bi bi-box"></i> Productos
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" routerLink="/usuarios" routerLinkActive="active">
+            <i class="bi bi-person-gear"></i> Usuarios
+          </a>
+        </li>
+      </ul>
+
+      <!-- Opciones del menú para CAJERO -->
+      <ul class="navbar-nav" *ngIf="!isAdmin()">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" routerLink="/clientes" routerLinkActive="active">
+            <i class="bi bi-people"></i> Clientes
+          </a>
+        </li>
       </ul>
       
-      <!-- Punto de Venta en el centro -->
+      
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a class="nav-link nav-tab" routerLink="/ventas" routerLinkActive="active">
@@ -39,11 +59,12 @@
         </li>
       </ul>
       
-      <!-- Usuario y botón salir a la derecha -->
+      
       <div class="d-flex align-items-center text-white">
         <span class="me-3">
           <i class="bi bi-person-circle"></i> 
           {{ (authService.user$ | async)?.nombre || 'Usuario' }}
+          <span class="badge bg-secondary ms-2">{{ getUserRole() }}</span>
         </span>
         <button class="btn btn-outline-light btn-sm" (click)="logout()">
           <i class="bi bi-box-arrow-right"></i> Salir

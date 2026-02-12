@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/user');
 
-const authMiddleware = (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
   try {
-    // Obtener token del header
-    const token = req.headers.authorization?.split(' ')[1]; // Bearer TOKEN
+    // Obtener el token del header
+    const token = req.header('Authorization')?.replace('Bearer ', '');
 
     if (!token) {
       return res.status(401).json({
@@ -12,19 +13,54 @@ const authMiddleware = (req, res, next) => {
       });
     }
 
-    // Verificar token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secretkey');
-    
-    // Agregar usuario al request
-    req.user = decoded;
-    
+    // Verificar el token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Buscar el usuario
+    const user = await User.findById(decoded.id).select('-password');
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        error: 'Usuario no encontrado'
+      });
+    }
+
+    if (!user.activo) {
+      return res.status(401).json({
+        success: false,
+        error: 'Usuario inactivo'
+      });
+    }
+
+    // Agregar el usuario a la request
+    req.user = user;
     next();
   } catch (error) {
-    return res.status(401).json({
+    res.status(401).json({
       success: false,
       error: 'Token inválido o expirado'
     });
   }
 };
 
-module.exports = authMiddleware;
+// Middleware para verificar que el usuario sea admin
+const adminOnly = (req, res, next) => {
+  if (!req.user) {
+    return res.status(401).json({
+      success: false,
+      error: 'No autenticado'
+    });
+  }
+
+  if (req.user.role !== 'admin') {
+    return res.status(403).json({
+      success: false,
+      error: 'Acceso denegado. Se requieren permisos de administrador'
+    });
+  }
+
+  next();
+};
+
+module.exports = { authMiddleware, adminOnly };
