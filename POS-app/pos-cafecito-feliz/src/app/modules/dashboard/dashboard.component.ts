@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
   productosStockBajo: any[] = [];
   ventas: Venta[] = [];
   loading = true;
+  metaMensual = 15000;
 
   constructor(
     public authService: AuthService,
@@ -99,10 +100,15 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  // getProgressPercentage(): number {
+  //   if (this.stats.ingresosMes === 0) return 0;
+  //   return (this.stats.ingresosHoy / this.stats.ingresosMes) * 100;
+  // }
   getProgressPercentage(): number {
-    if (this.stats.ingresosMes === 0) return 0;
-    return (this.stats.ingresosHoy / this.stats.ingresosMes) * 100;
-  }
+  if (this.metaMensual === 0) return 0;
+
+  return (this.stats.ingresosMes / this.metaMensual) * 100;
+}
 
   getStockClass(producto: any): string {
     if (producto.stock === 0) return 'danger';
@@ -130,8 +136,32 @@ get porcentajeDescuento(): number {
   return (this.totalDescuentos / subtotal) * 100;
 }
 
+//  Función para convertir imagen a base64
+private getBase64ImageFromURL(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.setAttribute('crossOrigin', 'anonymous');
 
-descargarReportePDF() {
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      const ctx = canvas.getContext('2d');
+      ctx?.drawImage(img, 0, 0);
+
+      const dataURL = canvas.toDataURL('image/png');
+      resolve(dataURL);
+    };
+
+    img.onerror = error => reject(error);
+    img.src = url;
+  });
+}
+
+
+
+async descargarReportePDF() {
   const doc = new jsPDF();
 
   const fecha = new Date().toLocaleDateString('es-MX');
@@ -152,6 +182,15 @@ descargarReportePDF() {
   y += 10;
 
   // LÍNEA
+  doc.line(14, y, 196, y);
+  y += 8;
+
+  //dinero inicial
+  doc.text(`Efectivo inicial: `, 14, y);
+  doc.text(` $1,000.00`, 160, y, { align: 'right' });
+  y += 8;
+
+    // LÍNEA
   doc.line(14, y, 196, y);
   y += 8;
 
@@ -182,6 +221,10 @@ descargarReportePDF() {
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
   doc.text('Corte de caja Exitoso!!! ', 105, y, { align: 'center' });
+
+  const logo = await this.getBase64ImageFromURL('assets/img/cafecitosmile.png');
+
+  doc.addImage(logo, 'PNG', 46, 14, 13, 8);
 
   // DESCARGA
   doc.save(`reporte-ventas-${fecha}.pdf`);

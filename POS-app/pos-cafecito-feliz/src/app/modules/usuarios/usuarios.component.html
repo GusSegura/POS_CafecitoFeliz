@@ -1,0 +1,309 @@
+<div class="container-fluid py-4">
+  <!-- Header -->
+  <div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <div>
+        <h2>
+          <i class="bi bi-person-gear"></i>
+          Gestión de Usuarios
+        </h2>
+        <p class="text-muted">Administra los usuarios del sistema</p>
+      </div>
+      <button class="btn btn-primary" (click)="openModal()">
+        <i class="bi bi-person-plus"></i> Nuevo Usuario
+      </button>
+    </div>
+  </div>
+
+  <!-- Filtros y búsqueda -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-search"></i>
+        </span>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Buscar por nombre o email..."
+          [(ngModel)]="searchTerm"
+          (input)="filterUsers()">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <select class="form-select" [(ngModel)]="roleFilter" (change)="filterUsers()">
+        <option value="">Todos los roles</option>
+        <option value="admin">Administrador</option>
+        <option value="cajero">Cajero</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select class="form-select" [(ngModel)]="statusFilter" (change)="filterUsers()">
+        <option value="">Todos los estados</option>
+        <option value="true">Activos</option>
+        <option value="false">Inactivos</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+
+  <!-- Tabla usuarios -->
+  <div class="row" *ngIf="!loading">
+    <div class="col-12">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Fecha de Registro</th>
+                <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of filteredUsers">
+                <td>
+                    <div class="d-flex align-items-center">
+                    <div class="avatar-circle me-3">
+                        {{ getInitials(user.nombre) }}
+                    </div>
+                    <strong>{{ user.nombre }}</strong>
+                    </div>
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <span class="badge" 
+                          [class.bg-primary]="user.role === 'admin'"
+                          [class.bg-info]="user.role === 'cajero'">
+                      <i class="bi" 
+                         [class.bi-shield-check]="user.role === 'admin'"
+                         [class.bi-person]="user.role === 'cajero'"></i>
+                      {{ user.role === 'admin' ? 'Administrador' : 'Cajero' }}
+                    </span>
+                  </td>
+                  <td>
+                    <span class="badge" 
+                          [class.bg-success]="user.activo"
+                          [class.bg-danger]="!user.activo">
+                      <i class="bi" 
+                         [class.bi-check-circle]="user.activo"
+                         [class.bi-x-circle]="!user.activo"></i>
+                      {{ user.activo ? 'Activo' : 'Inactivo' }}
+                    </span>
+                  </td>
+                  <td>{{ user.createdAt | date:'dd/MM/yyyy' }}</td>
+                  <td class="text-center">
+                    <div class="btn-group" role="group">
+                      <button 
+                        class="btn btn-sm btn-outline-primary"
+                        (click)="editUser(user)"
+                        [disabled]="user._id === currentUserId">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button 
+                        *ngIf="user.activo"
+                        class="btn btn-sm btn-outline-danger"
+                        (click)="confirmDelete(user)"
+                        [disabled]="user._id === currentUserId">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                      <button 
+                        *ngIf="!user.activo"
+                        class="btn btn-sm btn-outline-success"
+                        (click)="activateUserConfirm(user)">
+                        <i class="bi bi-check-circle"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr *ngIf="filteredUsers.length === 0">
+                  <td colspan="6" class="text-center py-4">
+                    <i class="bi bi-inbox fs-1 text-muted"></i>
+                    <p class="text-muted mt-2">No se encontraron usuarios</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para crear/editar usuario -->
+<div class="modal fade" 
+     id="userModal" 
+     tabindex="-1" 
+     [class.show]="showModal"
+     [style.display]="showModal ? 'block' : 'none'">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="bi" [class.bi-person-plus]="!editMode" [class.bi-person-gear]="editMode"></i>
+          {{ editMode ? 'Editar Usuario' : 'Nuevo Usuario' }}
+        </h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm">
+          <!-- Nombre -->
+          <div class="mb-3">
+            <label class="form-label">
+              Nombre completo <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              formControlName="nombre"
+              placeholder="Ej: Juan Pérez">
+            <div *ngIf="userForm.get('nombre')?.invalid && userForm.get('nombre')?.touched" 
+                 class="text-danger small mt-1">
+              El nombre es obligatorio
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="form-label">
+              Email <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="email" 
+              class="form-control" 
+              formControlName="email"
+              placeholder="usuario@ejemplo.com"
+              [readonly]="editMode">
+            <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" 
+                 class="text-danger small mt-1">
+              <span *ngIf="userForm.get('email')?.errors?.['required']">El email es obligatorio</span>
+              <span *ngIf="userForm.get('email')?.errors?.['email']">Email inválido</span>
+            </div>
+          </div>
+
+          <!-- Contraseña (solo en modo crear) -->
+          <div class="mb-3" *ngIf="!editMode">
+            <label class="form-label">
+              Contraseña <span class="text-danger">*</span>
+            </label>
+            <div class="input-group">
+              <input 
+                [type]="showPassword ? 'text' : 'password'" 
+                class="form-control" 
+                formControlName="password"
+                placeholder="Mínimo 6 caracteres">
+              <button 
+                class="btn btn-outline-secondary" 
+                type="button"
+                (click)="togglePassword()">
+                <i class="bi" [class.bi-eye]="!showPassword" [class.bi-eye-slash]="showPassword"></i>
+              </button>
+            </div>
+            <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" 
+                 class="text-danger small mt-1">
+              <span *ngIf="userForm.get('password')?.errors?.['required']">La contraseña es obligatoria</span>
+              <span *ngIf="userForm.get('password')?.errors?.['minlength']">Mínimo 6 caracteres</span>
+            </div>
+          </div>
+
+          <!-- Cambiar contraseña (solo en modo editar) -->
+          <div class="mb-3" *ngIf="editMode">
+            <div class="form-check">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="changePassword"
+                [(ngModel)]="changePassword"
+                [ngModelOptions]="{standalone: true}">
+              <label class="form-check-label" for="changePassword">
+                Cambiar contraseña
+              </label>
+            </div>
+          </div>
+
+          <!-- Nueva contraseña (si se marca el checkbox) -->
+          <div class="mb-3" *ngIf="editMode && changePassword">
+            <label class="form-label">
+              Nueva Contraseña <span class="text-danger">*</span>
+            </label>
+            <div class="input-group">
+              <input 
+                [type]="showPassword ? 'text' : 'password'" 
+                class="form-control" 
+                formControlName="password"
+                placeholder="Mínimo 6 caracteres">
+              <button 
+                class="btn btn-outline-secondary" 
+                type="button"
+                (click)="togglePassword()">
+                <i class="bi" [class.bi-eye]="!showPassword" [class.bi-eye-slash]="showPassword"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Rol -->
+          <div class="mb-3">
+            <label class="form-label">
+              Rol <span class="text-danger">*</span>
+            </label>
+            <select class="form-select" formControlName="role">
+              <option value="cajero">Cajero</option>
+              <option value="admin">Administrador</option>
+            </select>
+            <small class="text-muted">
+              <i class="bi bi-info-circle"></i>
+              El cajero solo puede acceder a ventas y clientes
+            </small>
+          </div>
+
+          <!-- Estado (solo en modo editar) -->
+          <div class="mb-3" *ngIf="editMode">
+            <label class="form-label">Estado</label>
+            <div class="form-check form-switch">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                formControlName="activo"
+                id="activoSwitch">
+              <label class="form-check-label" for="activoSwitch">
+                {{ userForm.get('activo')?.value ? 'Activo' : 'Inactivo' }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          <i class="bi bi-x-circle"></i> Cancelar
+        </button>
+        <button 
+          type="button" 
+          class="btn btn-primary" 
+          (click)="saveUser()"
+          [disabled]="userForm.invalid || saving">
+          <span *ngIf="saving" class="spinner-border spinner-border-sm me-2"></span>
+          <i *ngIf="!saving" class="bi" [class.bi-save]="!editMode" [class.bi-check-circle]="editMode"></i>
+          {{ saving ? 'Guardando...' : (editMode ? 'Actualizar' : 'Crear Usuario') }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop fade" 
+     [class.show]="showModal"
+     *ngIf="showModal"
+     (click)="closeModal()">
+</div>

@@ -10,3 +10,19 @@
   font-size: 2rem;
   color: #6f4e37;
 }
+.btn-coffee {
+  background-color: #866044; /* café clásico */
+  border-color: #875f42;
+  color: #fff;
+}
+
+.btn-coffee:hover {
+  background-color: #483222;
+  border-color: #483121;
+  color: #eca4a4;
+}
+
+.btn-coffee:disabled {
+  background-color: #a1887f;
+  border-color: #a1887f;
+}

@@ -1,14 +1,13 @@
 const express = require('express');
-const { register, login, getMe } = require('../controllers/authController');
-const authMiddleware = require('../middlewares/authMiddleware');
-
 const router = express.Router();
+const { login, register, getMe } = require('../controllers/authController'); // ← Asegúrate de importar getMe
+const { authMiddleware } = require('../middlewares/authMiddleware');
 
-// Rutas públicas
-router.post('/register', register);
+// Rutas públicas (sin autenticación)
 router.post('/login', login);
+router.post('/register', register);
 
-// Rutas protegidas
+// Ruta protegida
 router.get('/me', authMiddleware, getMe);
 
 module.exports = router;

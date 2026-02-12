@@ -6,7 +6,7 @@ const {
   actualizarProducto,
   eliminarProducto
 } = require('../controllers/productoController');
-const authMiddleware = require('../middlewares/authMiddleware');
+const { authMiddleware } = require('../middlewares/authMiddleware');
 const upload = require('../config/multer');
 
 const router = express.Router();

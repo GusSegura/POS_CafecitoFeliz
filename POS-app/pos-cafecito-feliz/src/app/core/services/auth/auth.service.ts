@@ -24,17 +24,24 @@ export class AuthService {
     private router: Router
   ) {}
 
-  login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
-      tap(response => {
-        if (response.token && response.user) {
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('user', JSON.stringify(response.user));
-          this.userSubject.next(response.user);
+login(credentials: any): Observable<any> {
+  return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
+    tap((response: any) => {
+      if (response.success) {
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('user', JSON.stringify(response.user));
+        this.userSubject.next(response.user);
+        
+        // Redirigir según el rol
+        if (response.user.role === 'admin') {
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.router.navigate(['/ventas']);
         }
-      })
-    );
-  }
+      }
+    })
+  );
+}
 
   logout(): void {
     localStorage.removeItem('token');

@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['admin', 'cajero', 'mesero'],
+    enum: ['admin', 'cajero'],
     default: 'cajero'
   },
   activo: {
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Método para hashear la contraseña antes de guardar
+// hashea la contraseña antes de guardar
 userSchema.pre('save', async function() {
   // Solo hashear si la contraseña fue modificada
   if (!this.isModified('password')) return;
