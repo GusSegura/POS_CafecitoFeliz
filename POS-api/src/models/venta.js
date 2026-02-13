@@ -52,13 +52,18 @@ const ventaSchema = new mongoose.Schema({
   },
   metodoPago: {
     type: String,
-    enum: ['efectivo', 'tarjeta', 'transferencia'],
+    enum: ['efectivo', 'tarjeta'],
     default: 'efectivo'
   },
   estado: {
     type: String,
     enum: ['completada', 'cancelada'],
     default: 'completada'
+  },
+  usuario: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'User',
+  required: true
   },
   fecha: {
     type: Date,

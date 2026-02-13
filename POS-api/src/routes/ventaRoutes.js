@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { authMiddleware } = require('../middlewares/authMiddleware');
 const {
   obtenerVentas,
   obtenerVentaPorId,
@@ -10,11 +11,11 @@ const {
 } = require('../controllers/ventaController');
 
 
-router.get('/', obtenerVentas);                           // GET /api/ventas
-router.get('/estadisticas', obtenerEstadisticas);         // GET /api/ventas/estadisticas
-router.get('/:id', obtenerVentaPorId);                    // GET /api/ventas/:id
-router.get('/cliente/:clienteId', obtenerVentasPorCliente); // GET /api/ventas/cliente/:clienteId
-router.post('/', crearVenta);                             // POST /api/ventas
-router.put('/:id/cancelar', cancelarVenta);               // PUT /api/ventas/:id/cancelar
+router.get('/', obtenerVentas);
+router.get('/estadisticas', obtenerEstadisticas);
+router.get('/:id', obtenerVentaPorId);
+router.get('/cliente/:clienteId', obtenerVentasPorCliente);
+router.post('/', authMiddleware, crearVenta);
+router.put('/:id/cancelar', cancelarVenta);
 
 module.exports = router;
