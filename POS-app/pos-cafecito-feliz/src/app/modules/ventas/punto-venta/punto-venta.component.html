@@ -190,13 +190,33 @@
             <span>${{ total | number:'1.2-2' }}</span>
           </div>
 
-          <button
-            class="btn btn-success w-100 py-2 fw-bold text-uppercase shadow-sm"
-            (click)="procesarVenta()"
-            [disabled]="carrito.length === 0">
-            <i class="bi bi-cash-coin me-2"></i> Cobrar
-          </button>
+            <label class="form-label fw-semibold small">Método de pago</label>
+            <div class="mb-3">
+              <div class="btn-group w-100">
+                <button
+                  type="button"
+                  class="btn"
+                  [class.btn-outline-secondary]="metodoPago !== 'efectivo'"
+                  [class.btn-secondary]="metodoPago === 'efectivo'"
+                  (click)="seleccionarMetodo('efectivo')">
+                  <i class="bi bi-cash-coin"></i> Efectivo
+                </button>
 
+                <button
+                  type="button"
+                  class="btn"
+                  [class.btn-outline-primary]="metodoPago !== 'tarjeta'"
+                  [class.btn-primary]="metodoPago === 'tarjeta'"
+                  (click)="seleccionarMetodo('tarjeta')">
+                  <i class="bi bi-credit-card"></i> Tarjeta
+                </button>
+              </div>
+            </div>
+            <button class="btn btn-success w-100 py-2 fw-bold text-uppercase shadow-sm" 
+              (click)="procesarVenta()" 
+              [disabled]="carrito.length === 0"> 
+              <i class="bi bi-cash-coin me-2"></i> Cobrar 
+            </button>
         </div>
 
       </div>

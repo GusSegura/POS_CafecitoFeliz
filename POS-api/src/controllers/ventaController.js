@@ -7,6 +7,7 @@ const obtenerVentas = async (req, res) => {
     const ventas = await Venta.find()
       .populate('cliente', 'nombre email')
       .populate('productos.producto', 'nombre precio')
+      .populate('usuario', 'nombre') 
       .sort({ createdAt: -1 }); // para mostrar mas recientes primero
     
     res.json({
@@ -15,8 +16,10 @@ const obtenerVentas = async (req, res) => {
       ventas
     });
   } catch (error) {
+    console.error('❌ ERROR REAL EN /api/ventas →', error);
     res.status(500).json({
-      success: false,
+      ok: false,
+      msg: 'Error al obtener ventas',
       error: error.message
     });
   }
@@ -26,7 +29,8 @@ const obtenerVentaPorId = async (req, res) => {
   try {
     const venta = await Venta.findById(req.params.id)
       .populate('cliente', 'nombre email telefono')
-      .populate('productos.producto', 'nombre precio categoria');
+      .populate('productos.producto', 'nombre precio categoria')
+      .populate('usuario', 'nombre');
     
     if (!venta) {
       return res.status(404).json({
@@ -54,6 +58,7 @@ const obtenerVentasPorCliente = async (req, res) => {
       estado: 'completada'
     })
       .populate('productos.producto', 'nombre precio')
+      .populate('usuario', 'nombre')
       .sort({ createdAt: -1 });
     
     res.json({
@@ -149,7 +154,8 @@ const crearVenta = async (req, res) => {
       cliente: cliente ? cliente._id : null, // Si no hay cliente, se guarda como null
       productos: productosVenta,
       descuentoPorcentaje: descuentoPorcentaje,
-      metodoPago: metodoPago || 'efectivo'
+      metodoPago: metodoPago || 'efectivo',
+      usuario: req.user._id
     });
     
     // 5. Calcular totales usando el método del modelo
@@ -174,7 +180,8 @@ const crearVenta = async (req, res) => {
     // 8. Respuesta final limpia
     const ventaCompleta = await Venta.findById(venta._id)
       .populate('cliente', 'nombre email purchasesCount')
-      .populate('productos.producto', 'nombre categoria');
+      .populate('productos.producto', 'nombre categoria')
+      .populate('usuario', 'nombre');
     
     res.status(201).json({
       success: true,

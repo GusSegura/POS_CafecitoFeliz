@@ -34,8 +34,9 @@ export class PuntoVentaComponent implements OnInit {
   busquedaCliente: string = '';
   clienteSeleccionado: any = null;
   todosLosClientes: any[] = []; 
-
   categoriaActual: string = 'todos';
+  metodoPago: 'efectivo' | 'tarjeta' = 'efectivo';
+
 
   constructor(
     private productoService: ProductoService,
@@ -197,7 +198,7 @@ const detalles = this.carrito.map(item => ({
   const ventaData = {
     clienteId: this.clienteSeleccionado ? this.clienteSeleccionado._id : null,
     productos: detalles,
-    metodoPago: 'efectivo',
+    metodoPago: this.metodoPago,
     subtotal: this.subtotal,
     descuento: this.montoDescuento,
     total: this.total
@@ -252,66 +253,92 @@ getProgressPercentage(): number {
 imprimirTicket(venta: any) {
   const doc = new jsPDF({
     unit: 'mm',
-    format: [80, 150] // Formato  de ticket 80mm
+    format: [80, 150] // Ticket térmico 80mm
   });
 
   // --- Encabezado ---
   doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
   doc.text('CAFECITO FELIZ', 40, 10, { align: 'center' });
+
   doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
   doc.text('RFC: CAFE123456789', 40, 15, { align: 'center' });
   doc.text('Madero #347-B, Centro', 40, 19, { align: 'center' });
   doc.text('------------------------------------------', 40, 23, { align: 'center' });
 
   // --- Información de la Venta ---
   doc.setFontSize(9);
+
   doc.text(`Ticket: ${venta._id.substring(venta._id.length - 6).toUpperCase()}`, 5, 28);
   doc.text(`Fecha: ${new Date(venta.createdAt).toLocaleString()}`, 5, 33);
+
   const nombreCliente = venta.cliente ? venta.cliente.nombre : 'Público General';
   doc.text(`Cliente: ${nombreCliente}`, 5, 38);
-  doc.text('------------------------------------------', 40, 43, { align: 'center' });
+
+  // 👤 Cajero que atendió
+  const cajero = venta.usuario?.nombre || 'Sistema';
+  doc.text(`Cajero: ${cajero}`, 5, 43);
+
+  // 💳 Método de pago (desde la venta, NO desde el componente)
+  const metodo = (venta.metodoPago || 'efectivo').toUpperCase();
+  doc.text(`Pago: ${metodo}`, 5, 48);
+
+  doc.text('------------------------------------------', 40, 53, { align: 'center' });
 
   // --- Tabla de Productos ---
   autoTable(doc, {
-    startY: 45,
+    startY: 55,
     margin: { left: 5, right: 5 },
     theme: 'plain',
     head: [['Cant', 'Producto', 'Total']],
     body: venta.productos.map((p: any) => [
       p.cantidad,
-      p.producto.nombre || p.nombre, //  p.nombre si el populate no está completo
+      p.producto?.nombre || p.nombre,
       `$${p.subtotal.toFixed(2)}`
     ]),
     styles: { fontSize: 7, cellPadding: 1 },
-    headStyles: { fillColor: [240, 240, 240], textColor: [0, 0, 0], fontStyle: 'bold' }
+    headStyles: {
+      fillColor: [240, 240, 240],
+      textColor: [0, 0, 0],
+      fontStyle: 'bold'
+    }
   });
 
   // --- Totales ---
   const finalY = (doc as any).lastAutoTable.finalY + 5;
+
   doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+
   doc.text(`Subtotal:`, 45, finalY);
   doc.text(`$${venta.subtotal.toFixed(2)}`, 75, finalY, { align: 'right' });
 
   if (venta.descuentoMonto > 0) {
-    doc.setTextColor(200, 0, 0); // Rojo para el descuento
+    doc.setTextColor(200, 0, 0);
     doc.text(`Desc. (${venta.descuentoPorcentaje}%):`, 45, finalY + 5);
     doc.text(`-$${venta.descuentoMonto.toFixed(2)}`, 75, finalY + 5, { align: 'right' });
     doc.setTextColor(0, 0, 0);
   }
 
   doc.setFontSize(11);
-  doc.setFont('', 'bold'); // negrita para el total
+  doc.setFont('helvetica', 'bold');
   doc.text(`TOTAL:`, 45, finalY + 12);
   doc.text(`$${venta.total.toFixed(2)}`, 75, finalY + 12, { align: 'right' });
 
-  // --- Pie de página ---
+  // --- Pie ---
   doc.setFontSize(8);
-  doc.setFont('', 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.text('¡Gracias por tu compra!', 40, finalY + 22, { align: 'center' });
-  doc.text('¡Entre mas compras, mas descuentos!', 40, finalY + 26, { align: 'center' });
+  doc.text('¡Entre más compras, más descuentos!', 40, finalY + 26, { align: 'center' });
 
-  // Abrir en nueva pestaña para imprimir
+  // Abrir para imprimir
   doc.output('dataurlnewwindow');
+}
+
+
+seleccionarMetodo(metodo: 'efectivo' | 'tarjeta') {
+  this.metodoPago = metodo;
 }
 
 }
