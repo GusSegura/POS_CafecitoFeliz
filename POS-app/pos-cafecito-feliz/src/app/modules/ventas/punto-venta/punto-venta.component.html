@@ -70,7 +70,8 @@
 
           </div>
         </form>
-            <div *ngIf="clienteSeleccionado" class="mt-2 alert alert-info py-1 px-2 small mb-0 d-flex justify-content-between align-items-center">
+            @if (clienteSeleccionado) {
+            <div class="mt-2 alert alert-info py-1 px-2 small mb-0 d-flex justify-content-between align-items-center">
               <span>
                 <i class="bi bi-person-check"></i> {{ clienteSeleccionado.nombre }}
                 <span class="badge bg-warning text-dark ms-2">
@@ -79,6 +80,7 @@
               </span>
               <button type="button" class="btn-close" style="font-size: 0.5rem;" (click)="clienteSeleccionado = null"></button>
             </div>
+            }
       </div>
     </div>
   </div>
@@ -91,52 +93,56 @@
 
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
 
-          <div class="col" *ngFor="let prod of productosFiltrados">
-            <div
-              class="card producto-card border-0 shadow-sm h-100"
-              (click)="agregarAlCarrito(prod)">
+          @for (prod of productosFiltrados; track prod._id) {
+            <div class="col">
+              <div
+                class="card producto-card border-0 shadow-sm h-100"
+                (click)="agregarAlCarrito(prod)">
 
-              <div class="card-img-container">
-                <img
-                  [src]="getImageUrl(prod.imagen)"
-                  class="card-img-top"
-                  alt="{{ prod.nombre }}">
-              </div>
-
-              <div class="card-body d-flex flex-column justify-content-between">
-
-                <div>
-                  <h6 class="card-title fw-bold mb-0 text-truncate">
-                    {{ prod.nombre }}
-                  </h6>
-                  <small class="text-muted">
-                    {{ prod.categoria | titlecase }}
-                  </small>
+                <div class="card-img-container">
+                  <img
+                    [src]="getImageUrl(prod.imagen)"
+                    class="card-img-top"
+                    alt="{{ prod.nombre }}">
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mt-2">
-                  <span class="fw-bold text-primary">
-                    ${{ prod.precio | number:'1.2-2' }}
-                  </span>
+                <div class="card-body d-flex flex-column justify-content-between">
 
-                  <span
-                    class="badge"
-                    [ngClass]="prod.stock > 5
-                      ? 'bg-success-subtle text-success'
-                      : 'bg-danger-subtle text-danger'">
-                    Stock: {{ prod.stock }}
-                  </span>
+                  <div>
+                    <h6 class="card-title fw-bold mb-0 text-truncate">
+                      {{ prod.nombre }}
+                    </h6>
+                    <small class="text-muted">
+                      {{ prod.categoria | titlecase }}
+                    </small>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <span class="fw-bold text-primary">
+                      ${{ prod.precio | number:'1.2-2' }}
+                    </span>
+
+                    <span
+                      class="badge"
+                      [ngClass]="prod.stock > 5
+                        ? 'bg-success-subtle text-success'
+                        : 'bg-danger-subtle text-danger'">
+                      Stock: {{ prod.stock }}
+                    </span>
+                  </div>
+
                 </div>
 
               </div>
-
             </div>
+          }
+
           </div>
 
         </div>
 
       </div>
-    </div>
+    
 
     <!-- CARRITO -->
     <div class="col-12 col-md-3">
@@ -146,26 +152,28 @@
         <div class="pos-cart-items flex-grow-1 overflow-auto p-2">
           <ul class="list-group list-group-flush">
 
-            <li
-              class="list-group-item px-0 d-flex justify-content-between align-items-center"
-              *ngFor="let item of carrito">
+            @for (item of carrito; track item.producto._id) {
+              <li
+                class="list-group-item px-0 d-flex justify-content-between align-items-center">
 
-              <div class="me-auto">
-                <div class="fw-bold small">
-                  {{ item.producto.nombre }}
+                <div class="me-auto">
+                  <div class="fw-bold small">
+                    {{ item.producto.nombre }}
+                  </div>
+                  <div class="text-muted small">
+                    ${{ item.producto.precio }} x {{ item.cantidad }}
+                  </div>
                 </div>
-                <div class="text-muted small">
-                  ${{ item.producto.precio }} x {{ item.cantidad }}
+
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-outline-secondary py-0" (click)="decrementar(item)">-</button>
+                  <button class="btn btn-outline-secondary py-0" disabled>{{ item.cantidad }}</button>
+                  <button class="btn btn-outline-secondary py-0" (click)="incrementar(item)">+</button>
                 </div>
-              </div>
 
-              <div class="btn-group btn-group-sm">
-                <button class="btn btn-outline-secondary py-0" (click)="decrementar(item)">-</button>
-                <button class="btn btn-outline-secondary py-0" disabled>{{ item.cantidad }}</button>
-                <button class="btn btn-outline-secondary py-0" (click)="incrementar(item)">+</button>
-              </div>
+              </li>
+            }
 
-            </li>
 
           </ul>
         </div>
@@ -178,12 +186,13 @@
             <span>${{ subtotal | number:'1.2-2' }}</span>
           </div>
 
-          <div
-            class="d-flex justify-content-between mb-2 text-success small"
-            *ngIf="descuento > 0">
-            <span>Descuento ({{ descuento }}%):</span>
-            <span>- ${{ montoDescuento | number:'1.2-2' }}</span>
-          </div>
+          @if (descuento > 0) {
+            <div class="d-flex justify-content-between mb-2 text-success small">
+              <span>Descuento ({{ descuento }}%):</span>
+              <span>- ${{ montoDescuento | number:'1.2-2' }}</span>
+            </div>
+          }
+
 
           <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
             <span>Total:</span>
@@ -221,7 +230,5 @@
 
       </div>
     </div>
-
   </div>
-
-</div>
+  </div>

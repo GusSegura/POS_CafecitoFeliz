@@ -41,114 +41,124 @@
       </div>
     </div>
   </div>
-
   <!-- Loading -->
-  <div *ngIf="loading" class="text-center py-5">
-    <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Cargando...</span>
+  @if (loading) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p class="mt-3 text-muted">Cargando clientes...</p>
     </div>
-    <p class="mt-3 text-muted">Cargando clientes...</p>
-  </div>
+  }
 
-  <!-- Tabla de clientes -->
-  <div class="card border-0 shadow-sm" *ngIf="!loading">
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table class="table table-hover mb-0">
-          <thead class="table-light">
-            <tr>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Teléfono</th>
-              <th class="text-center">Compras</th>
-              <th class="text-center">Descuento</th>
-              <th class="text-center">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let cliente of clientesFiltrados">
-              <td>
-                <i class="bi bi-person-circle me-2"></i>
-                {{ cliente.nombre }}
-              </td>
-              <td>{{ cliente.email }}</td>
-              <td>{{ cliente.telefono || 'N/A' }}</td>
-              <td class="text-center">
-                <span class="badge bg-primary">
-                  {{ cliente.purchasesCount }}
-                </span>
-              </td>
-              <td class="text-center">
-                <span class="badge" [ngClass]="getBadgeClass(cliente.purchasesCount)">
-                  {{ getDescuento(cliente.purchasesCount) }}%
-                </span>
-              </td>
-              <td class="text-center">
-                <button
-                  class="btn btn-sm btn-outline-primary me-2"
-                  (click)="openEditModal(cliente)"
-                  title="Editar"
-                >
-                  <i class="bi bi-pencil"></i>
-                </button>
-                <button
-                  class="btn btn-sm btn-outline-danger"
-                  (click)="deleteCliente(cliente)"
-                  title="Eliminar"
-                >
-                  <i class="bi bi-trash"></i>
-                </button>
-              </td>
-            </tr>
+  <!-- Tabla -->
+  @if (!loading) {
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th class="text-center">Compras</th>
+                <th class="text-center">Descuento</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
 
-            <!-- Sin resultados -->
-            <tr *ngIf="clientesFiltrados.length === 0">
-              <td colspan="6" class="text-center py-5 text-muted">
-                <i class="bi bi-inbox" style="font-size: 3rem;"></i>
-                <p class="mt-3">No hay clientes registrados</p>
-                <button class="btn btn-primary btn-sm" (click)="openNewClienteModal()">
-                  <i class="bi bi-person-plus"></i>
-                  Registrar primer cliente
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              @for (cliente of clientesFiltrados; track cliente._id) {
+                <tr>
+                  <td>
+                    <i class="bi bi-person-circle me-2"></i>
+                    {{ cliente.nombre }}
+                  </td>
+                  <td>{{ cliente.email }}</td>
+                  <td>{{ cliente.telefono || 'N/A' }}</td>
+                  <td class="text-center">
+                    <span class="badge bg-primary">
+                      {{ cliente.purchasesCount }}
+                    </span>
+                  </td>
+                  <td class="text-center">
+                    <span class="badge" [ngClass]="getBadgeClass(cliente.purchasesCount)">
+                      {{ getDescuento(cliente.purchasesCount) }}%
+                    </span>
+                  </td>
+                  <td class="text-center">
+                    <button
+                      class="btn btn-sm btn-outline-primary me-2"
+                      (click)="openEditModal(cliente)"
+                      title="Editar"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      (click)="deleteCliente(cliente)"
+                      title="Eliminar"
+                    >
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              }
+
+              @if (clientesFiltrados.length === 0) {
+                <tr>
+                  <td colspan="6" class="text-center py-5 text-muted">
+                    <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                    <p class="mt-3">No hay clientes registrados</p>
+                    <button class="btn btn-primary btn-sm" (click)="openNewClienteModal()">
+                      <i class="bi bi-person-plus"></i>
+                      Registrar primer cliente
+                    </button>
+                  </td>
+                </tr>
+              }
+
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+  }
 
-  <!-- Leyenda de descuentos -->
-  <div class="row mt-4" *ngIf="!loading && clientesFiltrados.length > 0">
-    <div class="col-12">
-      <div class="card border-0 shadow-sm">
-        <div class="card-body">
-          <h6 class="mb-3">
-            <i class="bi bi-tag"></i>
-            Niveles de Descuento
-          </h6>
-          <div class="row">
-            <div class="col-md-3">
-              <span class="badge bg-secondary me-2">0%</span>
-              <small>0 compras</small>
-            </div>
-            <div class="col-md-3">
-              <span class="badge bg-info me-2">5%</span>
-              <small>1-3 compras</small>
-            </div>
-            <div class="col-md-3">
-              <span class="badge bg-warning me-2">10%</span>
-              <small>4-7 compras</small>
-            </div>
-            <div class="col-md-3">
-              <span class="badge bg-success me-2">15%</span>
-              <small>8+ compras</small>
+  <!-- Leyenda -->
+  @if (!loading && clientesFiltrados.length > 0) {
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h6 class="mb-3">
+              <i class="bi bi-tag"></i>
+              Niveles de Descuento
+            </h6>
+            <div class="row">
+              <div class="col-md-3">
+                <span class="badge bg-secondary me-2">0%</span>
+                <small>0 compras</small>
+              </div>
+              <div class="col-md-3">
+                <span class="badge bg-info me-2">5%</span>
+                <small>1-3 compras</small>
+              </div>
+              <div class="col-md-3">
+                <span class="badge bg-warning me-2">10%</span>
+                <small>4-7 compras</small>
+              </div>
+              <div class="col-md-3">
+                <span class="badge bg-success me-2">15%</span>
+                <small>8+ compras</small>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  }
 </div>
 
 <!-- Modal -->
@@ -215,4 +225,8 @@
     </div>
   </div>
 </div>
-<div class="modal-backdrop fade" [class.show]="showModal" *ngIf="showModal"></div>
+
+<!-- Backdrop -->
+@if (showModal) {
+  <div class="modal-backdrop fade show"></div>
+}

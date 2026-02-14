@@ -29,7 +29,6 @@ const storage = multer.diskStorage({
   }
 });
 
-// Filtro para validar tipos de archivo
 const fileFilter = (req, file, cb) => {
   
   const allowedTypes = /jpeg|jpg|png|gif|webp/;

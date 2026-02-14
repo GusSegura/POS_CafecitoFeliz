@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
     ingresosHoy: 0,
     ingresosMes: 0,
     totalDescuentos: 0,
+    descuentosHoy: 0,
     promedioVenta: 0
   };
   
@@ -36,6 +37,9 @@ export class DashboardComponent implements OnInit {
   ventas: Venta[] = [];
   loading = true;
   metaMensual = 15000;
+  ventasEfectivo: number = 0;
+  ventasTarjeta: number = 0;
+  efectivoInicial = 1000;
 
   constructor(
     public authService: AuthService,
@@ -86,24 +90,23 @@ export class DashboardComponent implements OnInit {
           this.stats.ingresosHoy = parseFloat(est.ingresosHoy) || 0;
           this.stats.ingresosMes = parseFloat(est.ingresosMes) || 0;
           this.stats.totalDescuentos = parseFloat(est.totalDescuentos) || 0;
-          this.stats.promedioVenta = parseFloat(est.promedioVenta) || 0;
-          
-          // Top productos
-          this.topProductos = est.topProductos || [];
-        }
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Error cargando estadísticas:', err);
-        this.loading = false;
+          this.stats.descuentosHoy = parseFloat(est.descuentosHoy) || 0;
+          this.stats.promedioVenta = parseFloat(est.promedioVenta) || 0;          
+          this.ventasEfectivo = parseFloat(est.ventasEfectivoHoy) || 0;
+          this.ventasTarjeta = parseFloat(est.ventasTarjetaHoy) || 0;
+        
+        // Top productos
+        this.topProductos = est.topProductos || [];
       }
-    });
-  }
+      this.loading = false;
+    },
+    error: (err) => {
+      console.error('Error cargando estadísticas:', err);
+      this.loading = false;
+    }
+  });
+}
 
-  // getProgressPercentage(): number {
-  //   if (this.stats.ingresosMes === 0) return 0;
-  //   return (this.stats.ingresosHoy / this.stats.ingresosMes) * 100;
-  // }
   getProgressPercentage(): number {
   if (this.metaMensual === 0) return 0;
 
@@ -201,26 +204,51 @@ async descargarReportePDF() {
   doc.text(`$${this.stats.ingresosHoy.toFixed(2)}`, 160, y, { align: 'right' });
   y += 8;
 
+  // Efectivo y tarjeta
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.text(`   • Ventas en efectivo:`, 14, y);
+  doc.text(`$${this.ventasEfectivo.toFixed(2)}`, 160, y, { align: 'right' });
+  y += 6;
+
+  doc.text(`   • Ventas con tarjeta:`, 14, y);
+  doc.text(`$${this.ventasTarjeta.toFixed(2)}`, 160, y, { align: 'right' });
+  y += 8;
+
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'normal');
+
+  // Total ventas
   doc.text(`Ventas realizadas:`, 14, y);
   doc.text(`${this.stats.ventasHoy}`, 160, y, { align: 'right' });
   y += 8;
 
+  // Descuentos solo del día
   doc.text(`Descuentos aplicados:`, 14, y);
-  doc.text(`$${(this.stats.totalDescuentos || 0).toFixed(2)}`, 160, y, { align: 'right' });
+  doc.text(`$${this.stats.descuentosHoy.toFixed(2)}`, 160, y, { align: 'right' });
   y += 10;
 
-  // TOTAL
+  // TOTAL NETO = Efectivo inicial + Ventas en efectivo
+  const totalNeto = this.efectivoInicial + this.ventasEfectivo;
+  
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(14);
-  doc.text(`TOTAL NETO:`, 14, y);
-  doc.text(`$${this.stats.ingresosHoy.toFixed(2)}`, 160, y, { align: 'right' });
+  doc.text(`TOTAL NETO EN CAJA:`, 14, y);
+  doc.text(`$${totalNeto.toFixed(2)}`, 160, y, { align: 'right' });
 
-  y += 15;
+  y += 8;
+  
+  // Info adicional
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`(Efectivo inicial + Ventas en efectivo)`, 14, y);
+
+  y += 10;
 
   // MENSAJE FINAL
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
-  doc.text('Corte de caja Exitoso!!! ', 105, y, { align: 'center' });
+  doc.text('Corte de caja Exitoso!!!', 105, y, { align: 'center' });
 
   const logo = await this.getBase64ImageFromURL('assets/img/cafecitosmile.png');
 
@@ -229,6 +257,4 @@ async descargarReportePDF() {
   // DESCARGA
   doc.save(`reporte-ventas-${fecha}.pdf`);
 }
-
-
 }

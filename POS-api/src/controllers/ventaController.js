@@ -16,7 +16,7 @@ const obtenerVentas = async (req, res) => {
       ventas
     });
   } catch (error) {
-    console.error('❌ ERROR REAL EN /api/ventas →', error);
+    console.error('ERROR', error);
     res.status(500).json({
       ok: false,
       msg: 'Error al obtener ventas',
@@ -79,7 +79,7 @@ const crearVenta = async (req, res) => {
   try {
     const { clienteId, productos, metodoPago } = req.body;
     
-    // 1. Validar que vengan productos (Es lo único estrictamente obligatorio ahora)
+    // Validar que vengan productos
     if (!productos || productos.length === 0) {
       return res.status(400).json({
         success: false,
@@ -90,7 +90,7 @@ const crearVenta = async (req, res) => {
     let cliente = null;
     let descuentoPorcentaje = 0;
 
-    // 2. Lógica de Cliente Opcional
+    // Lógica de Cliente Opcional
     if (clienteId) {
       cliente = await Cliente.findById(clienteId);
       if (!cliente) {
@@ -103,7 +103,7 @@ const crearVenta = async (req, res) => {
       descuentoPorcentaje = cliente.calcularDescuento();
     }
     
-    // 3. Validar stock y preparar lista de productos para la venta
+    // Validar stock y preparar lista de productos para la venta
     const productosVenta = [];
     const productosInsuficientes = [];
     
@@ -149,7 +149,7 @@ const crearVenta = async (req, res) => {
       });
     }
     
-    // 4. Crear la instancia de la Venta
+    // Crea la instancia de la Venta
     const venta = new Venta({
       cliente: cliente ? cliente._id : null, // Si no hay cliente, se guarda como null
       productos: productosVenta,
@@ -158,13 +158,13 @@ const crearVenta = async (req, res) => {
       usuario: req.user._id
     });
     
-    // 5. Calcular totales usando el método del modelo
+    // Calcula totales usando el método del modelo
     venta.calcularTotales();
     
-    // 6. Guardar la venta
+    // Guarda la venta
     await venta.save();
     
-    // 7. Actualizar Inventario y contador del Cliente
+    // Actualiza Inventario y contador del Cliente
     for (const item of productos) {
       const producto = await Producto.findById(item.productoId);
       producto.reducirStock(item.cantidad);
@@ -177,7 +177,7 @@ const crearVenta = async (req, res) => {
       await cliente.save();
     }
     
-    // 8. Respuesta final limpia
+    // Respuesta final
     const ventaCompleta = await Venta.findById(venta._id)
       .populate('cliente', 'nombre email purchasesCount')
       .populate('productos.producto', 'nombre categoria')
@@ -216,7 +216,7 @@ const cancelarVenta = async (req, res) => {
       });
     }
     
-    // 1. Devolver el stock
+    // Devolver el stock
     for (const item of venta.productos) {
       const producto = await Producto.findById(item.producto);
       if (producto) {
@@ -225,14 +225,14 @@ const cancelarVenta = async (req, res) => {
       }
     }
     
-    // 2. Reducir el contador de compras del cliente
+    // Reducir el contador de compras del cliente
     const cliente = await Cliente.findById(venta.cliente);
     if (cliente && cliente.purchasesCount > 0) {
       cliente.purchasesCount -= 1;
       await cliente.save();
     }
     
-    // 3. Marcar la venta como cancelada
+    // Marcar la venta como cancelada
     venta.estado = 'cancelada';
     await venta.save();
     
@@ -280,6 +280,18 @@ const obtenerEstadisticas = async (req, res) => {
     });
     const ingresosHoy = ventasCompletadasHoy.reduce((sum, venta) => sum + venta.total, 0);
     
+    // ✨ NUEVO: Descuentos del día
+    const descuentosHoy = ventasCompletadasHoy.reduce((sum, venta) => sum + (venta.descuentoMonto || 0), 0);
+    
+    // ✨ Ventas por método de pago del día
+    const ventasEfectivoHoy = ventasCompletadasHoy
+      .filter(venta => venta.metodoPago === 'efectivo')
+      .reduce((sum, venta) => sum + venta.total, 0);
+    
+    const ventasTarjetaHoy = ventasCompletadasHoy
+      .filter(venta => venta.metodoPago === 'tarjeta')
+      .reduce((sum, venta) => sum + venta.total, 0);
+    
     // Ingresos del mes
     const ventasMes = await Venta.find({
       estado: 'completada',
@@ -287,7 +299,7 @@ const obtenerEstadisticas = async (req, res) => {
     });
     const ingresosMes = ventasMes.reduce((sum, venta) => sum + venta.total, 0);
     
-    // Top productos (necesitarías ajustar según tu modelo)
+    // Top productos vendidos
     const topProductos = await Venta.aggregate([
       { $match: { estado: 'completada' } },
       { $unwind: '$productos' },
@@ -320,14 +332,17 @@ const obtenerEstadisticas = async (req, res) => {
         ingresosHoy: ingresosHoy.toFixed(2),
         ingresosMes: ingresosMes.toFixed(2),
         totalDescuentos: totalDescuentos.toFixed(2),
+        descuentosHoy: descuentosHoy.toFixed(2),
         promedioVenta: totalVentas > 0 ? (totalIngresos / totalVentas).toFixed(2) : 0,
+        ventasEfectivoHoy: ventasEfectivoHoy.toFixed(2),
+        ventasTarjetaHoy: ventasTarjetaHoy.toFixed(2),
         topProductos
       }
     });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
-};  
+};
 
 module.exports = {
   obtenerVentas,

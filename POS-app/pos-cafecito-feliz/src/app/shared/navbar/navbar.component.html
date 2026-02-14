@@ -1,16 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
  
-    <a class="navbar-brand d-flex align-items-center" routerLink="/dashboard" *ngIf="isAdmin()">
-      <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
-      <span class="fw-bold">Cafecito Feliz</span>
-    </a>
-    
+    @if (isAdmin()) {
+  <a class="navbar-brand d-flex align-items-center" routerLink="/dashboard">
+    <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
+    <span class="fw-bold">Cafecito Feliz</span>
+  </a>
+}
     <!-- Para cajeros, logo sin link al dashboard -->
-    <div class="navbar-brand d-flex align-items-center" *ngIf="!isAdmin()">
-      <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
-      <span class="fw-bold">Cafecito Feliz</span>
-    </div>
+    @if (!isAdmin()) {
+  <div class="navbar-brand d-flex align-items-center">
+    <img src="/assets/img/cafecitosmile.png" width="55" height="33" alt="Cafecito Feliz" class="me-2">
+    <span class="fw-bold">Cafecito Feliz</span>
+  </div>
+}
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -18,7 +21,8 @@
     
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- SOLO ADMIN -->
-      <ul class="navbar-nav" *ngIf="isAdmin()">
+      @if (isAdmin()) {
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link nav-tab" routerLink="/dashboard" routerLinkActive="active">
             <i class="bi bi-speedometer2"></i> Dashboard
@@ -40,15 +44,18 @@
           </a>
         </li>
       </ul>
+    }
 
       <!-- Opciones del menú para CAJERO -->
-      <ul class="navbar-nav" *ngIf="!isAdmin()">
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/clientes" routerLinkActive="active">
-            <i class="bi bi-people"></i> Clientes
-          </a>
-        </li>
-      </ul>
+      @if (!isAdmin()) {
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link nav-tab" routerLink="/clientes" routerLinkActive="active">
+              <i class="bi bi-people"></i> Clientes
+            </a>
+          </li>
+        </ul>
+      }
       
       
       <ul class="navbar-nav mx-auto">

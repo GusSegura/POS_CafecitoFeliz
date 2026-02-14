@@ -30,7 +30,7 @@ const clienteSchema = new mongoose.Schema({
   timestamps: true 
 });
 
-// para hacer el calculo del descuento
+// *Para hacer el calculo del descuento*
 clienteSchema.methods.calcularDescuento = function() {
   if (this.purchasesCount === 0) return 0;
   if (this.purchasesCount >= 1 && this.purchasesCount <= 3) return 5;

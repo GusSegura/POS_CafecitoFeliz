@@ -107,13 +107,12 @@ export class PuntoVentaComponent implements OnInit {
   }
 
 
-
   buscarCliente() {
     if (!this.busquedaCliente.trim()) {
       this.clienteSeleccionado = null;
       return;
     }
-    // Filtrado simple por nombre
+    // Filtrado por nombre
     const termino = this.busquedaCliente.toLowerCase();
     const encontrado = this.todosLosClientes.find((c: any) => 
       c.nombre.toLowerCase().includes(termino) || 
@@ -138,7 +137,7 @@ export class PuntoVentaComponent implements OnInit {
     return 0;
   }
 
-  // --- GETTERS (CÁLCULOS AUTOMÁTICOS) ---
+  // getters de calculos
   
   get subtotal(): number {
     return this.carrito.reduce((acc, item) => acc + (item.producto.precio * item.cantidad), 0);
@@ -157,7 +156,7 @@ export class PuntoVentaComponent implements OnInit {
     return this.subtotal - this.montoDescuento;
   }
 
-  // --- AYUDAS VISUALES ---
+  // AYUDAS VISUALES para el cliente
 
   getImageUrl(imagenPath: string): string {
 
@@ -253,10 +252,10 @@ getProgressPercentage(): number {
 imprimirTicket(venta: any) {
   const doc = new jsPDF({
     unit: 'mm',
-    format: [80, 150] // Ticket térmico 80mm
+    format: [80, 150] // impresora térmica 80mm
   });
 
-  // --- Encabezado ---
+  // Encabezado
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
   doc.text('CAFECITO FELIZ', 40, 10, { align: 'center' });
@@ -267,7 +266,7 @@ imprimirTicket(venta: any) {
   doc.text('Madero #347-B, Centro', 40, 19, { align: 'center' });
   doc.text('------------------------------------------', 40, 23, { align: 'center' });
 
-  // --- Información de la Venta ---
+  // Información de la Venta
   doc.setFontSize(9);
 
   doc.text(`Ticket: ${venta._id.substring(venta._id.length - 6).toUpperCase()}`, 5, 28);
@@ -276,17 +275,17 @@ imprimirTicket(venta: any) {
   const nombreCliente = venta.cliente ? venta.cliente.nombre : 'Público General';
   doc.text(`Cliente: ${nombreCliente}`, 5, 38);
 
-  // 👤 Cajero que atendió
+  // Cajero que atendió
   const cajero = venta.usuario?.nombre || 'Sistema';
   doc.text(`Cajero: ${cajero}`, 5, 43);
 
-  // 💳 Método de pago (desde la venta, NO desde el componente)
+  // Método de pago
   const metodo = (venta.metodoPago || 'efectivo').toUpperCase();
   doc.text(`Pago: ${metodo}`, 5, 48);
 
   doc.text('------------------------------------------', 40, 53, { align: 'center' });
 
-  // --- Tabla de Productos ---
+  // Tabla de Productos
   autoTable(doc, {
     startY: 55,
     margin: { left: 5, right: 5 },
@@ -305,7 +304,7 @@ imprimirTicket(venta: any) {
     }
   });
 
-  // --- Totales ---
+  // Totales
   const finalY = (doc as any).lastAutoTable.finalY + 5;
 
   doc.setFontSize(9);
@@ -326,7 +325,7 @@ imprimirTicket(venta: any) {
   doc.text(`TOTAL:`, 45, finalY + 12);
   doc.text(`$${venta.total.toFixed(2)}`, 75, finalY + 12, { align: 'right' });
 
-  // --- Pie ---
+  // Pie del ticket
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
   doc.text('¡Gracias por tu compra!', 40, finalY + 22, { align: 'center' });
