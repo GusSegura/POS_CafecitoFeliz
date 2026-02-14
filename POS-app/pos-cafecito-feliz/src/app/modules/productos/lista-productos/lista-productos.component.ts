@@ -131,8 +131,8 @@ export class ListaProductosComponent implements OnInit {
       stock: 0,
       categoria: 'café'
     };
-    this.selectedFile = null; // Limpiar archivo
-    this.imagePreview = null; // Limpiar vista previa
+    this.selectedFile = null; // Limpia archivo
+    this.imagePreview = null; // Limpia vista previa
     this.showModal = true;
   }
 
@@ -146,8 +146,8 @@ export class ListaProductosComponent implements OnInit {
       stock: producto.stock,
       categoria: producto.categoria
     };
-    this.selectedFile = null; //  Limpiar archivo
-    this.imagePreview = this.getImageUrl(producto.imagen); //  Mostrar imagen actual
+    this.selectedFile = null; //  Limpia archivo
+    this.imagePreview = this.getImageUrl(producto.imagen); //  Muestra imagen actual
     this.showModal = true;
   }
 
@@ -160,21 +160,21 @@ export class ListaProductosComponent implements OnInit {
       stock: 0,
       categoria: 'bebida'
     };
-    this.selectedFile = null; //  Limpiar archivo
-    this.imagePreview = null; //  Limpiar preview    
+    this.selectedFile = null; //  Limpia archivo
+    this.imagePreview = null; //  Limpia vista previa    
   }
 
 
 onFileSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
-      // Validar tipo de archivo
+      // Valida tipo de archivo
       if (!file.type.startsWith('image/')) {
         this.toastr.error('Solo se permiten imágenes', 'Error');
         return;
       }
 
-      // Validar tamaño (5MB)
+      // Valida tamaño (5MB)
       if (file.size > 5 * 1024 * 1024) {
         this.toastr.error('La imagen no debe superar 5MB', 'Error');
         return;
@@ -182,7 +182,7 @@ onFileSelected(event: any) {
 
       this.selectedFile = file;
 
-      // Generar vista previa
+      // Genera vista previa
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imagePreview = e.target.result;
@@ -235,7 +235,7 @@ if (this.editMode && this.currentProductoId) {
   formData.append('stock', this.productoForm.stock.toString());
   formData.append('categoria', this.productoForm.categoria);
   
-  // Solo añadimos la imagen si el usuario seleccionó una nueva
+  // añadimos imagen si el usuario seleccionó una nueva
   if (this.selectedFile) {
     formData.append('imagen', this.selectedFile);
   }
@@ -265,7 +265,7 @@ if (this.editMode && this.currentProductoId) {
     }
   }
 
-   // Obtener URL completa de imagen
+   // Obtiene URL completa de imagen
   getImageUrl(imagen: string): string {
     if (!imagen) {
       return 'http://localhost:3000/uploads/productos/default-producto.png';

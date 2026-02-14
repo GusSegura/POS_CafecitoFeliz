@@ -38,7 +38,7 @@ export const routes: Routes = [
     path: 'usuarios',
     loadComponent: () => import('./modules/usuarios/usuarios.component').then(m => m.UsuariosComponent),
     canActivate: [authGuard, roleGuard],
-    data: { roles: ['admin'] } // Solo admin - nuevo módulo
+    data: { roles: ['admin'] } // Solo admin
   },
   {
     path: '',

@@ -1,5 +1,5 @@
 .card-img-container {
-  height: 140px;              /* Altura fija uniforme */
+  height: 140px; /* Altura fija de la imagen */
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@
 .card-img-top {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;        /* NO corta la imagen */
+  object-fit: contain; /* NO corta la imagen */
 }
 
 
@@ -32,31 +32,41 @@
   height: 100px; 
 }
 
+.pos-cart {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  min-height: 500px;
+}
+
+/* Área de items con scroll */
+.pos-cart-items {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Footer del carrito siempre visible */
+.pos-cart-footer {
+  position: sticky;
+  bottom: 0;
+  background: #f8f9fa;
+}
+
+/* Botones de categoría */
 .pos-category-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  min-height: 80px;     
-  padding: 0.5rem 0.25rem;
-  text-align: center;
+  padding: 0.5rem;
+  min-width: 80px;
 }
 
-
-.pos-cart {
-  height: calc(80vh - 160px); /* ajusta altura del carrito */
-  position: sticky;
-  top: 1rem;
+/* Opcional: mejorar scroll de items */
+.pos-cart-items::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Área que scrollea */
-.pos-cart-items {
-  overflow-y: auto;
-}
-
-/* Footer siempre visible */
-.pos-cart-footer {
-  flex-shrink: 0;
-  background: #f8f9fa;
+.pos-cart-items::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
 }

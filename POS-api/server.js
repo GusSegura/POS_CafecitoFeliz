@@ -31,6 +31,8 @@ app.get('/', (req, res) => {
       auth: '/api/auth',
       clientes: '/api/clientes',
       productos: '/api/productos',
+      usuarios: '/api/users',
+      dashboard: '/api/dashboard',
       ventas: '/api/ventas'
     }
   });

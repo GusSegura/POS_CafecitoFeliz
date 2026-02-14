@@ -98,7 +98,7 @@ export class UsuariosComponent implements OnInit {
       activo: true
     });
     
-    // Hacer la contraseña obligatoria en modo crear
+    // contraseña obligatoria en modo crear
     this.userForm.get('password')?.setValidators([Validators.required, Validators.minLength(6)]);
     this.userForm.get('password')?.updateValueAndValidity();
     
@@ -118,7 +118,7 @@ export class UsuariosComponent implements OnInit {
       activo: user.activo
     });
     
-    // En modo editar, la contraseña no es obligatoria por defecto
+    // En modo editar la contraseña no es obligatoria 
     this.userForm.get('password')?.clearValidators();
     this.userForm.get('password')?.updateValueAndValidity();
     

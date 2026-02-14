@@ -38,10 +38,13 @@
               class="btn btn-coffee w-100"
               [disabled]="loading"
             >
-              <span *ngIf="!loading">Iniciar Sesión</span>
-              <span *ngIf="loading">
-                <i class="fa fa-spinner fa-spin"></i> Cargando...
-              </span>
+              @if (!loading) {
+                <span>Iniciar Sesión</span>
+              } @else {
+                <span>
+                  <i class="fa fa-spinner fa-spin"></i> Cargando...
+                </span>
+              }
             </button>
           </form>
         </div>

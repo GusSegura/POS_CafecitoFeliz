@@ -3,7 +3,7 @@ const User = require('../models/user');
 
 const authMiddleware = async (req, res, next) => {
   try {
-    // Obtener el token del header
+    // Obtiene token del header
     const token = req.header('Authorization')?.replace('Bearer ', '');
 
     if (!token) {
@@ -13,10 +13,10 @@ const authMiddleware = async (req, res, next) => {
       });
     }
 
-    // Verificar el token
+    // Verifica el token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Buscar el usuario
+    // Busca usuario
     const user = await User.findById(decoded.id).select('-password');
 
     if (!user) {
@@ -33,7 +33,7 @@ const authMiddleware = async (req, res, next) => {
       });
     }
 
-    // Agregar el usuario a la request
+    // Agrega usuario a la request
     req.user = user;
     next();
   } catch (error) {

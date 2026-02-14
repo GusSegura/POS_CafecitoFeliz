@@ -84,7 +84,7 @@ ventaSchema.methods.calcularTotales = function() {
   // para calcular monto de descuento
   this.descuentoMonto = (this.subtotal * this.descuentoPorcentaje) / 100;
 
-  // Calcular total final
+  // Calcula total final
   this.total = this.subtotal - this.descuentoMonto;
 };
 

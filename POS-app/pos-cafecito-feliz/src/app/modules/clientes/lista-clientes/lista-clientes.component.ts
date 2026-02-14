@@ -54,7 +54,6 @@ export class ListaClientesComponent implements OnInit {
     });
   }
 
-  // Búsqueda
   onSearch() {
     if (!this.searchTerm.trim()) {
       this.clientesFiltrados = [...this.clientes];
@@ -69,7 +68,6 @@ export class ListaClientesComponent implements OnInit {
     );
   }
 
-  // Calcular descuento
   getDescuento(purchasesCount: number): number {
     if (purchasesCount === 0) return 0;
     if (purchasesCount >= 1 && purchasesCount <= 3) return 5;
@@ -112,7 +110,7 @@ export class ListaClientesComponent implements OnInit {
     this.showModal = true;
   }
 
-  // Cerrar modal
+
   closeModal() {
     this.showModal = false;
     this.clienteForm = {
@@ -122,7 +120,7 @@ export class ListaClientesComponent implements OnInit {
     };
   }
 
-  // Guardar cliente (crear o actualizar)
+
   saveCliente() {
     // Validaciones
     if (!this.clienteForm.nombre.trim()) {
