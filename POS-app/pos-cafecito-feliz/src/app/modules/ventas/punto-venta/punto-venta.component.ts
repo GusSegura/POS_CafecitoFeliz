@@ -280,8 +280,10 @@ imprimirTicket(venta: any) {
   doc.text(`Cajero: ${cajero}`, 5, 43);
 
   // Método de pago
-  const metodo = (venta.metodoPago || 'efectivo').toUpperCase();
-  doc.text(`Pago: ${metodo}`, 5, 48);
+const metodo = (venta.metodoPago || 'efectivo').toUpperCase();
+doc.setTextColor(0, 0, 255);
+doc.text(`Pago: ${metodo}`, 5, 48);
+doc.setTextColor(0, 0, 0);
 
   doc.text('------------------------------------------', 40, 53, { align: 'center' });
 
