@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://backend.onrender.com/api' 
+  production: false,
+  BACK_URL: 'http://localhost:3000/api/'
 };

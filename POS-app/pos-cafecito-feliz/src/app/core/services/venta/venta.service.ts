@@ -7,27 +7,27 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class VentaService {
-  private apiUrl = `${environment.apiUrl}/ventas`;
+  private baseUrl = `${environment.BACK_URL}/ventas`;
 
   constructor(private http: HttpClient) {}
 
   getVentas(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.baseUrl);
   }
 
   getVentaById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   crearVenta(venta: any): Observable<any> {
-    return this.http.post(this.apiUrl, venta);
+    return this.http.post(this.baseUrl, venta);
   }
 
   cancelarVenta(id: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}/cancelar`, {});
+    return this.http.put(`${this.baseUrl}/${id}/cancelar`, {});
   }
 
   getEstadisticas(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/estadisticas`);
+    return this.http.get(`${this.baseUrl}/estadisticas`);
   }
 }

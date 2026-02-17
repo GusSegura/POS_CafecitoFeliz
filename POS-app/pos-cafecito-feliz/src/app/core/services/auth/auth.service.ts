@@ -15,7 +15,8 @@ export interface User {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = `${environment.apiUrl}/auth`;
+  private baseUrl = environment.BACK_URL;
+  private API = `${environment.BACK_URL}auth`;
   private userSubject = new BehaviorSubject<User | null>(this.getUserFromStorage());
   public user$ = this.userSubject.asObservable();
 
@@ -25,7 +26,7 @@ export class AuthService {
   ) {}
 
 login(credentials: any): Observable<any> {
-  return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
+  return this.http.post(`${this.API}/login`, credentials).pipe(
     tap((response: any) => {
       if (response.success) {
         localStorage.setItem('token', response.token);

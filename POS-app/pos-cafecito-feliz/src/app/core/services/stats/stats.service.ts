@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StatsService {
-  private apiUrl = 'http://localhost:3000/api/ventas';
+  private baseUrl = 'http://localhost:3000/api/ventas';
 
   constructor(private http: HttpClient) {}
 
   getEstadisticas(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/estadisticas`);
+    return this.http.get(`${this.baseUrl}/estadisticas`);
   }
 }

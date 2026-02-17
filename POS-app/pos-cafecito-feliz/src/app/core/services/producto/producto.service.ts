@@ -7,27 +7,27 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class ProductoService {
-  private apiUrl = `${environment.apiUrl}/productos`;
+  private baseUrl = `${environment.BACK_URL}productos`;
 
   constructor(private http: HttpClient) {}
 
   getProductos(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.baseUrl);
   }
 
   getProductoById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   crearProducto(productoData: FormData): Observable<any> {
-    return this.http.post(this.apiUrl, productoData);
+    return this.http.post(this.baseUrl, productoData);
   }
 
   actualizarProducto(id: string, productoData: FormData | any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, productoData);
+    return this.http.put(`${this.baseUrl}/${id}`, productoData);
   }
 
   eliminarProducto(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
