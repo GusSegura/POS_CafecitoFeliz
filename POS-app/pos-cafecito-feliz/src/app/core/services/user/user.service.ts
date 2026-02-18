@@ -6,27 +6,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/api/users';
+  private baseUrl = 'http://localhost:3000/api/users';
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.baseUrl);
   }
 
   createUser(user: any): Observable<any> {
-    return this.http.post(this.apiUrl, user);
+    return this.http.post(this.baseUrl, user);
   }
 
   updateUser(id: string, user: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, user);
+    return this.http.put(`${this.baseUrl}/${id}`, user);
   }
 
   deleteUser(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   activateUser(id: string): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}/activate`, {});
+    return this.http.patch(`${this.baseUrl}/${id}/activate`, {});
   }
 }

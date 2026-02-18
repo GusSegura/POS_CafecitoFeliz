@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class DashboardService {
 
-  private apiUrl = 'http://localhost:3000/api/dashboard';
+  private baseUrl = 'http://localhost:3000/api/dashboard';
 
   constructor(private http: HttpClient) {}
 
   getEstadisticas(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/estadisticas`);
+    return this.http.get<any>(`${this.baseUrl}/estadisticas`);
   }
 }

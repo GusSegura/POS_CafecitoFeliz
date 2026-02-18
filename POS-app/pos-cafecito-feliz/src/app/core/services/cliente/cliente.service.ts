@@ -7,27 +7,27 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class ClienteService {
-  private apiUrl = `${environment.apiUrl}/clientes`;
+  private baseUrl = `${environment.BACK_URL}clientes`;
 
   constructor(private http: HttpClient) {}
 
   getClientes(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.baseUrl);
   }
 
   getClienteById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   crearCliente(cliente: any): Observable<any> {
-    return this.http.post(this.apiUrl, cliente);
+    return this.http.post(this.baseUrl, cliente);
   }
 
   actualizarCliente(id: string, cliente: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, cliente);
+    return this.http.put(`${this.baseUrl}/${id}`, cliente);
   }
 
   eliminarCliente(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

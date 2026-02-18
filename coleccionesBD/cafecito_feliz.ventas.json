@@ -1,0 +1,2931 @@
+[{
+  "_id": {
+    "$oid": "697851752df8861f09b802cb"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 2,
+      "precioUnitario": 45,
+      "subtotal": 90,
+      "_id": {
+        "$oid": "697851752df8861f09b802cc"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "697850612df8861f09b802c1"
+      },
+      "nombre": "Café Capuchino",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "697851752df8861f09b802cd"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 145,
+  "total": 145,
+  "createdAt": {
+    "$date": "2026-01-27T05:47:33.297Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-27T05:47:33.297Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "697851eb2df8861f09b802db"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697850612df8861f09b802c1"
+      },
+      "nombre": "Café Capuchino",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "697851eb2df8861f09b802dc"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 2.75,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 55,
+  "total": 52.25,
+  "createdAt": {
+    "$date": "2026-01-27T05:49:31.749Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-27T05:49:31.749Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a1682bbb144f9aaa19dc0"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698804320b2dff4e921d4ae3"
+      },
+      "nombre": "Café de olla",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698a1682bbb144f9aaa19dc1"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 40,
+  "total": 40,
+  "createdAt": {
+    "$date": "2026-02-09T17:16:50.833Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T17:16:50.833Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a16b9bbb144f9aaa19de7"
+  },
+  "cliente": {
+    "$oid": "69770353e0afa2777accd4b4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698804a10b2dff4e921d4ae6"
+      },
+      "nombre": "Café cortado",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698a16b9bbb144f9aaa19de8"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 50,
+  "total": 50,
+  "createdAt": {
+    "$date": "2026-02-09T17:17:45.179Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T17:17:45.179Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a3d5d479914ee2ff4a79a"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698a3d5d479914ee2ff4a79b"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 65,
+  "total": 65,
+  "createdAt": {
+    "$date": "2026-02-09T20:02:37.158Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:02:37.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a3e6f479914ee2ff4a7a9"
+  },
+  "cliente": {
+    "$oid": "697700ca6d94ef1381ef283f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697850612df8861f09b802c1"
+      },
+      "nombre": "Café Capuchino",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "698a3e6f479914ee2ff4a7aa"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 55,
+  "total": 55,
+  "createdAt": {
+    "$date": "2026-02-09T20:07:11.157Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:07:11.157Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a3e94479914ee2ff4a7bc"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698a3e94479914ee2ff4a7bd"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 70,
+  "total": 70,
+  "createdAt": {
+    "$date": "2026-02-09T20:07:48.291Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:07:48.291Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4090479914ee2ff4a7ca"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69894690f10c6777a8ae521a"
+      },
+      "nombre": "Pastel de cajeta",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698a4090479914ee2ff4a7cb"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 50,
+  "total": 50,
+  "createdAt": {
+    "$date": "2026-02-09T20:16:16.178Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:16:16.178Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a410f479914ee2ff4a7d9"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69894690f10c6777a8ae521a"
+      },
+      "nombre": "Pastel de cajeta",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698a410f479914ee2ff4a7da"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 50,
+  "total": 50,
+  "createdAt": {
+    "$date": "2026-02-09T20:18:23.470Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:18:23.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4132479914ee2ff4a7e5"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698a4132479914ee2ff4a7e6"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 2.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 45,
+  "total": 42.75,
+  "createdAt": {
+    "$date": "2026-02-09T20:18:58.559Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:18:58.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a49e6479914ee2ff4a808"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698805d90b2dff4e921d4aea"
+      },
+      "nombre": "Café Espresso",
+      "cantidad": 1,
+      "precioUnitario": 60,
+      "subtotal": 60,
+      "_id": {
+        "$oid": "698a49e6479914ee2ff4a809"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 60,
+  "total": 60,
+  "createdAt": {
+    "$date": "2026-02-09T20:56:06.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:56:06.820Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4a1b479914ee2ff4a817"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698806cd0b2dff4e921d4af3"
+      },
+      "nombre": "Café Latte",
+      "cantidad": 2,
+      "precioUnitario": 50,
+      "subtotal": 100,
+      "_id": {
+        "$oid": "698a4a1b479914ee2ff4a818"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 100,
+  "total": 100,
+  "createdAt": {
+    "$date": "2026-02-09T20:56:59.857Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:56:59.857Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4a8e479914ee2ff4a82d"
+  },
+  "cliente": {
+    "$oid": "698a4a51479914ee2ff4a823"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698807ed0b2dff4e921d4aff"
+      },
+      "nombre": "Naranjada",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698a4a8e479914ee2ff4a82e"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 70,
+  "total": 70,
+  "createdAt": {
+    "$date": "2026-02-09T20:58:54.372Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:58:54.372Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4ada479914ee2ff4a83d"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698807820b2dff4e921d4af9"
+      },
+      "nombre": "Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698a4ada479914ee2ff4a83e"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 70,
+  "total": 70,
+  "createdAt": {
+    "$date": "2026-02-09T21:00:10.966Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T21:00:10.966Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4aed479914ee2ff4a849"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698a4aed479914ee2ff4a84a"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 4.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 85,
+  "total": 80.75,
+  "createdAt": {
+    "$date": "2026-02-09T21:00:29.683Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T21:00:29.683Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ab4577375e13b8ac47c44"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698ab4577375e13b8ac47c45"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698ab4577375e13b8ac47c46"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 165,
+  "total": 165,
+  "createdAt": {
+    "$date": "2026-02-10T04:30:15.718Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T04:30:15.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ab4a47375e13b8ac47c55"
+  },
+  "cliente": {
+    "$oid": "698aa7a6479914ee2ff4a89f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698ab4a47375e13b8ac47c56"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698ab4a47375e13b8ac47c57"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 145,
+  "total": 145,
+  "createdAt": {
+    "$date": "2026-02-10T04:31:32.490Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T04:31:32.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ab4eb7375e13b8ac47c6b"
+  },
+  "cliente": {
+    "$oid": "698a4a51479914ee2ff4a823"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698ab4eb7375e13b8ac47c6c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881dcf0b2dff4e921d4b14"
+      },
+      "nombre": "Tizana Fria",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698ab4eb7375e13b8ac47c6d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 7.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 150,
+  "total": 142.5,
+  "createdAt": {
+    "$date": "2026-02-10T04:32:43.360Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T04:32:43.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ab78c7375e13b8ac47c8f"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 2,
+      "precioUnitario": 45,
+      "subtotal": 90,
+      "_id": {
+        "$oid": "698ab78c7375e13b8ac47c90"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69893c68f10c6777a8ae51ca"
+      },
+      "nombre": "Panini",
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "subtotal": 120,
+      "_id": {
+        "$oid": "698ab78c7375e13b8ac47c91"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 10.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 210,
+  "total": 199.5,
+  "createdAt": {
+    "$date": "2026-02-10T04:43:56.686Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T04:43:56.686Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ab7df7375e13b8ac47ca9"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698807820b2dff4e921d4af9"
+      },
+      "nombre": "Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698ab7df7375e13b8ac47caa"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69893baef10c6777a8ae51c0"
+      },
+      "nombre": "Hamburguesa",
+      "cantidad": 1,
+      "precioUnitario": 110,
+      "subtotal": 110,
+      "_id": {
+        "$oid": "698ab7df7375e13b8ac47cab"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 9,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 180,
+  "total": 171,
+  "createdAt": {
+    "$date": "2026-02-10T04:45:19.168Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T04:45:19.168Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aca3b716e79eee616387c"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698aca3b716e79eee616387d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 3.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 70,
+  "total": 66.5,
+  "createdAt": {
+    "$date": "2026-02-10T06:03:39.457Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:03:39.457Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698acaa6716e79eee616388c"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698acaa6716e79eee616388d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 4.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 45,
+  "total": 40.5,
+  "createdAt": {
+    "$date": "2026-02-10T06:05:26.223Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:05:26.223Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698acb17716e79eee61638de"
+  },
+  "cliente": {
+    "$oid": "698a4a51479914ee2ff4a823"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698acb17716e79eee61638df"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 2.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 45,
+  "total": 42.75,
+  "createdAt": {
+    "$date": "2026-02-10T06:07:19.638Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:07:19.638Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698accbb716e79eee61638ec"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698accbb716e79eee61638ed"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-10T06:14:19.796Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:14:19.796Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698acd3b716e79eee6163924"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698acd3b716e79eee6163925"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698acd3b716e79eee6163926"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 6.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 130,
+  "total": 123.5,
+  "createdAt": {
+    "$date": "2026-02-10T06:16:27.316Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:16:27.316Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ad5d8716e79eee6163a88"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698ad5d8716e79eee6163a89"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 3.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 65,
+  "total": 61.75,
+  "createdAt": {
+    "$date": "2026-02-10T06:53:12.791Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T06:53:12.791Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ad9c7b49484fcf968685d"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698ad9c7b49484fcf968685e"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 3.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 65,
+  "total": 61.75,
+  "createdAt": {
+    "$date": "2026-02-10T07:09:59.295Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T07:09:59.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698b9075f69e14596932b610"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 2,
+      "precioUnitario": 45,
+      "subtotal": 90,
+      "_id": {
+        "$oid": "698b9075f69e14596932b611"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698804320b2dff4e921d4ae3"
+      },
+      "nombre": "Café de olla",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698b9075f69e14596932b612"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698b9075f69e14596932b613"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698b9075f69e14596932b614"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698946b4f10c6777a8ae521d"
+      },
+      "nombre": "Pastel de chocolate",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "698b9075f69e14596932b615"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 30.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 305,
+  "total": 274.5,
+  "createdAt": {
+    "$date": "2026-02-10T20:09:25.186Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T20:09:25.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698bcac4f69e14596932b696"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69893c68f10c6777a8ae51ca"
+      },
+      "nombre": "Panini",
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "subtotal": 120,
+      "_id": {
+        "$oid": "698bcac4f69e14596932b697"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894752f10c6777a8ae5226"
+      },
+      "nombre": "Tarta de frutas",
+      "cantidad": 1,
+      "precioUnitario": 60,
+      "subtotal": 60,
+      "_id": {
+        "$oid": "698bcac5f69e14596932b698"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "697850612df8861f09b802c1"
+      },
+      "nombre": "Café Capuchino",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "698bcac5f69e14596932b699"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 23.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "subtotal": 235,
+  "total": 211.5,
+  "createdAt": {
+    "$date": "2026-02-11T00:18:13.010Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T00:18:13.010Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698be47649da5eb427531058"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698807c40b2dff4e921d4afc"
+      },
+      "nombre": "Limonada",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698be47649da5eb427531059"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 7,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-11T02:07:50.294Z"
+  },
+  "subtotal": 70,
+  "total": 63,
+  "createdAt": {
+    "$date": "2026-02-11T02:07:50.349Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T02:07:50.349Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698be49d49da5eb427531067"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698be49d49da5eb427531068"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989457ef10c6777a8ae5214"
+      },
+      "nombre": "CupKake",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698be49d49da5eb427531069"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 8.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-11T02:08:29.487Z"
+  },
+  "subtotal": 85,
+  "total": 76.5,
+  "createdAt": {
+    "$date": "2026-02-11T02:08:29.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T02:08:29.492Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698bea982a884789e08aed7b"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698bea982a884789e08aed7c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698807820b2dff4e921d4af9"
+      },
+      "nombre": "Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698bea982a884789e08aed7d"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698bea982a884789e08aed7e"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698946b4f10c6777a8ae521d"
+      },
+      "nombre": "Pastel de chocolate",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "698bea982a884789e08aed7f"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 27.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-11T02:34:00.538Z"
+  },
+  "subtotal": 275,
+  "total": 247.5,
+  "createdAt": {
+    "$date": "2026-02-11T02:34:00.576Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T02:34:00.576Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698cf9df2a6a6c726ee7436d"
+  },
+  "cliente": {
+    "$oid": "698cf9c52a6a6c726ee74362"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698cf9df2a6a6c726ee7436e"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698cf9df2a6a6c726ee7436f"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698cf9df2a6a6c726ee74370"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-11T21:51:27.252Z"
+  },
+  "subtotal": 195,
+  "total": 195,
+  "createdAt": {
+    "$date": "2026-02-11T21:51:27.258Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T21:51:27.258Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4d8f2a6a6c726ee74bf3"
+  },
+  "cliente": {
+    "$oid": "698aa7e7479914ee2ff4a8a3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698d4d8f2a6a6c726ee74bf4"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698807820b2dff4e921d4af9"
+      },
+      "nombre": "Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698d4d8f2a6a6c726ee74bf5"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:48:31.631Z"
+  },
+  "subtotal": 135,
+  "total": 135,
+  "createdAt": {
+    "$date": "2026-02-12T03:48:31.642Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:48:31.642Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4d9b2a6a6c726ee74c05"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4d9b2a6a6c726ee74c06"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:48:43.961Z"
+  },
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-12T03:48:43.965Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:48:43.965Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4db22a6a6c726ee74c12"
+  },
+  "cliente": {
+    "$oid": "698aa811479914ee2ff4a8a7"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4db22a6a6c726ee74c13"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:49:06.018Z"
+  },
+  "subtotal": 40,
+  "total": 40,
+  "createdAt": {
+    "$date": "2026-02-12T03:49:06.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:06.020Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4dc32a6a6c726ee74c23"
+  },
+  "cliente": {
+    "$oid": "698aa842479914ee2ff4a8ab"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4dc32a6a6c726ee74c24"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698d4dc32a6a6c726ee74c25"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69893c68f10c6777a8ae51ca"
+      },
+      "nombre": "Panini",
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "subtotal": 120,
+      "_id": {
+        "$oid": "698d4dc32a6a6c726ee74c26"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:49:23.077Z"
+  },
+  "subtotal": 235,
+  "total": 235,
+  "createdAt": {
+    "$date": "2026-02-12T03:49:23.080Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:23.080Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4ddc2a6a6c726ee74c3b"
+  },
+  "cliente": {
+    "$oid": "698aa87f479914ee2ff4a8af"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698946b4f10c6777a8ae521d"
+      },
+      "nombre": "Pastel de chocolate",
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "subtotal": 55,
+      "_id": {
+        "$oid": "698d4ddc2a6a6c726ee74c3c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698816bd0b2dff4e921d4b0b"
+      },
+      "nombre": "Malteada de Fresa",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698d4ddc2a6a6c726ee74c3d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:49:48.028Z"
+  },
+  "subtotal": 150,
+  "total": 150,
+  "createdAt": {
+    "$date": "2026-02-12T03:49:48.031Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:48.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e0d2a6a6c726ee74c58"
+  },
+  "cliente": {
+    "$oid": "698aa90e479914ee2ff4a8b7"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 2,
+      "precioUnitario": 45,
+      "subtotal": 90,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c59"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698804320b2dff4e921d4ae3"
+      },
+      "nombre": "Café de olla",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c5a"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6988083d0b2dff4e921d4b04"
+      },
+      "nombre": "Mangonada",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c5b"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69890fd5566915a8ddced0cd"
+      },
+      "nombre": "Club Sandwich",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c5c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c5d"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989466ef10c6777a8ae5217"
+      },
+      "nombre": "Pastel de 3 leches",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698d4e0d2a6a6c726ee74c5e"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:50:37.313Z"
+  },
+  "subtotal": 435,
+  "total": 435,
+  "createdAt": {
+    "$date": "2026-02-12T03:50:37.317Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:50:37.317Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e1c2a6a6c726ee74c7b"
+  },
+  "cliente": {
+    "$oid": "698aa9a4479914ee2ff4a92c"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4e1c2a6a6c726ee74c7c"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:50:52.555Z"
+  },
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-12T03:50:52.557Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:50:52.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e2d2a6a6c726ee74c8b"
+  },
+  "cliente": {
+    "$oid": "698aac2c07c7beb0b92f24f7"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698d4e2d2a6a6c726ee74c8c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4e2d2a6a6c726ee74c8d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:51:09.617Z"
+  },
+  "subtotal": 125,
+  "total": 125,
+  "createdAt": {
+    "$date": "2026-02-12T03:51:09.619Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:51:09.619Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e482a6a6c726ee74ca4"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4e482a6a6c726ee74ca5"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4e482a6a6c726ee74ca6"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 8.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:51:36.548Z"
+  },
+  "subtotal": 85,
+  "total": 76.5,
+  "createdAt": {
+    "$date": "2026-02-12T03:51:36.550Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:51:36.550Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e682a6a6c726ee74cbd"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4e682a6a6c726ee74cbe"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4e682a6a6c726ee74cbf"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 8.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:52:08.595Z"
+  },
+  "subtotal": 85,
+  "total": 76.5,
+  "createdAt": {
+    "$date": "2026-02-12T03:52:08.598Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:52:08.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e7a2a6a6c726ee74cd2"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4e7a2a6a6c726ee74cd3"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698d4e7a2a6a6c726ee74cd4"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69890fd5566915a8ddced0cd"
+      },
+      "nombre": "Club Sandwich",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698d4e7a2a6a6c726ee74cd5"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 22.5,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:52:26.710Z"
+  },
+  "subtotal": 225,
+  "total": 202.5,
+  "createdAt": {
+    "$date": "2026-02-12T03:52:26.714Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:52:26.714Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4e8a2a6a6c726ee74ce9"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698804320b2dff4e921d4ae3"
+      },
+      "nombre": "Café de olla",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "698d4e8a2a6a6c726ee74cea"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 4,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:52:42.282Z"
+  },
+  "subtotal": 40,
+  "total": 36,
+  "createdAt": {
+    "$date": "2026-02-12T03:52:42.283Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:52:42.283Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4eae2a6a6c726ee74cfe"
+  },
+  "cliente": {
+    "$oid": "698a4a51479914ee2ff4a823"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698d4eae2a6a6c726ee74cff"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69893c68f10c6777a8ae51ca"
+      },
+      "nombre": "Panini",
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "subtotal": 120,
+      "_id": {
+        "$oid": "698d4eae2a6a6c726ee74d00"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 8.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T03:53:18.468Z"
+  },
+  "subtotal": 165,
+  "total": 156.75,
+  "createdAt": {
+    "$date": "2026-02-12T03:53:18.470Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:53:18.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d50722a6a6c726ee74e6a"
+  },
+  "cliente": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698806cd0b2dff4e921d4af3"
+      },
+      "nombre": "Café Latte",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698d50722a6a6c726ee74e6b"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698816bd0b2dff4e921d4b0b"
+      },
+      "nombre": "Malteada de Fresa",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698d50722a6a6c726ee74e6c"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698d50722a6a6c726ee74e6d"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 15,
+  "descuentoMonto": 33.75,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T04:00:50.634Z"
+  },
+  "subtotal": 225,
+  "total": 191.25,
+  "createdAt": {
+    "$date": "2026-02-12T04:00:50.638Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T04:00:50.638Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698de45ef1e1f1c5178df5f6"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69893baef10c6777a8ae51c0"
+      },
+      "nombre": "Hamburguesa",
+      "cantidad": 1,
+      "precioUnitario": 110,
+      "subtotal": 110,
+      "_id": {
+        "$oid": "698de45ef1e1f1c5178df5f7"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T14:31:58.160Z"
+  },
+  "subtotal": 110,
+  "total": 110,
+  "createdAt": {
+    "$date": "2026-02-12T14:31:58.175Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T14:31:58.175Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e4b3f272981ad6ee9d614"
+  },
+  "cliente": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698807820b2dff4e921d4af9"
+      },
+      "nombre": "Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698e4b3f272981ad6ee9d615"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698816880b2dff4e921d4b08"
+      },
+      "nombre": "Malteada de Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698e4b3f272981ad6ee9d616"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69881dcf0b2dff4e921d4b14"
+      },
+      "nombre": "Tizana Fria",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698e4b3f272981ad6ee9d617"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "6989447df10c6777a8ae520e"
+      },
+      "nombre": "Papas a la francesa",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698e4b3f272981ad6ee9d618"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 15,
+  "descuentoMonto": 47.25,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T21:50:55.125Z"
+  },
+  "subtotal": 315,
+  "total": 267.75,
+  "createdAt": {
+    "$date": "2026-02-12T21:50:55.145Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:50:55.145Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e4c20272981ad6ee9d648"
+  },
+  "cliente": {
+    "$oid": "697700ca6d94ef1381ef283f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698e4c20272981ad6ee9d649"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806cd0b2dff4e921d4af3"
+      },
+      "nombre": "Café Latte",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698e4c20272981ad6ee9d64a"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698816880b2dff4e921d4b08"
+      },
+      "nombre": "Malteada de Chocolate",
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "subtotal": 95,
+      "_id": {
+        "$oid": "698e4c20272981ad6ee9d64b"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 9.5,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T21:54:40.412Z"
+  },
+  "subtotal": 190,
+  "total": 180.5,
+  "createdAt": {
+    "$date": "2026-02-12T21:54:40.417Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:54:40.417Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e4d6e272981ad6ee9d666"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988061d0b2dff4e921d4aed"
+      },
+      "nombre": "Café Moca",
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "subtotal": 65,
+      "_id": {
+        "$oid": "698e4d6e272981ad6ee9d667"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698e4d6e272981ad6ee9d668"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T22:00:14.484Z"
+  },
+  "subtotal": 145,
+  "total": 145,
+  "createdAt": {
+    "$date": "2026-02-12T22:00:14.489Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:00:14.489Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e4db5272981ad6ee9d724"
+  },
+  "cliente": {
+    "$oid": "69770353e0afa2777accd4b4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698e4db5272981ad6ee9d725"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698e4db5272981ad6ee9d726"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 8.25,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T22:01:25.209Z"
+  },
+  "subtotal": 165,
+  "total": 156.75,
+  "createdAt": {
+    "$date": "2026-02-12T22:01:25.211Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:01:25.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e5013272981ad6ee9d73d"
+  },
+  "cliente": {
+    "$oid": "698aa7a6479914ee2ff4a89f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6988072e0b2dff4e921d4af6"
+      },
+      "nombre": "Té Chai",
+      "cantidad": 1,
+      "precioUnitario": 85,
+      "subtotal": 85,
+      "_id": {
+        "$oid": "698e5013272981ad6ee9d73e"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69893c68f10c6777a8ae51ca"
+      },
+      "nombre": "Panini",
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "subtotal": 120,
+      "_id": {
+        "$oid": "698e5013272981ad6ee9d73f"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 10.25,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T22:11:31.667Z"
+  },
+  "subtotal": 205,
+  "total": 194.75,
+  "createdAt": {
+    "$date": "2026-02-12T22:11:31.674Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:11:31.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e5184272981ad6ee9d756"
+  },
+  "cliente": {
+    "$oid": "698aa7e7479914ee2ff4a8a3"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698e5184272981ad6ee9d757"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "69894503f10c6777a8ae5211"
+      },
+      "nombre": "Papas Gajo",
+      "cantidad": 1,
+      "precioUnitario": 80,
+      "subtotal": 80,
+      "_id": {
+        "$oid": "698e5184272981ad6ee9d758"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 6.25,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "fecha": {
+    "$date": "2026-02-12T22:17:40.927Z"
+  },
+  "subtotal": 125,
+  "total": 118.75,
+  "createdAt": {
+    "$date": "2026-02-12T22:17:40.932Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:17:40.932Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e6f16cf86ddf44a2da03d"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698e6f16cf86ddf44a2da03e"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "698d4c182a6a6c726ee74be3"
+  },
+  "fecha": {
+    "$date": "2026-02-13T00:23:50.525Z"
+  },
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-13T00:23:50.536Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T00:23:50.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f3a5ae050adb2a2fc0b1d"
+  },
+  "cliente": {
+    "$oid": "698aa87f479914ee2ff4a8af"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698804a10b2dff4e921d4ae6"
+      },
+      "nombre": "Café cortado",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "698f3a5ae050adb2a2fc0b1e"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698f3a5ae050adb2a2fc0b1f"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 6,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "698cf9702a6a6c726ee74356"
+  },
+  "fecha": {
+    "$date": "2026-02-13T14:51:06.968Z"
+  },
+  "subtotal": 120,
+  "total": 114,
+  "createdAt": {
+    "$date": "2026-02-13T14:51:07.003Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T14:51:07.003Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ffc5328b0509b83aac1e6"
+  },
+  "cliente": {
+    "$oid": "698ffc2028b0509b83aac16f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "698ffc5328b0509b83aac1e7"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806630b2dff4e921d4af0"
+      },
+      "nombre": "Café Frapuchino",
+      "cantidad": 1,
+      "precioUnitario": 70,
+      "subtotal": 70,
+      "_id": {
+        "$oid": "698ffc5328b0509b83aac1e8"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T04:38:43.621Z"
+  },
+  "subtotal": 115,
+  "total": 115,
+  "createdAt": {
+    "$date": "2026-02-14T04:38:43.630Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:38:43.630Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699009939b477522d3926fec"
+  },
+  "cliente": {
+    "$oid": "698ffc2028b0509b83aac16f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697850612df8861f09b802c1"
+      },
+      "nombre": "Café Capuchino",
+      "cantidad": 1,
+      "precioUnitario": 60,
+      "subtotal": 60,
+      "_id": {
+        "$oid": "699009939b477522d3926fed"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698804320b2dff4e921d4ae3"
+      },
+      "nombre": "Café de olla",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "699009939b477522d3926fee"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 5,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T05:35:15.959Z"
+  },
+  "subtotal": 100,
+  "total": 95,
+  "createdAt": {
+    "$date": "2026-02-14T05:35:15.985Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:15.985Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6990099f9b477522d392706d"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698804a10b2dff4e921d4ae6"
+      },
+      "nombre": "Café cortado",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "6990099f9b477522d392706e"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "698806cd0b2dff4e921d4af3"
+      },
+      "nombre": "Café Latte",
+      "cantidad": 1,
+      "precioUnitario": 50,
+      "subtotal": 50,
+      "_id": {
+        "$oid": "6990099f9b477522d392706f"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T05:35:27.508Z"
+  },
+  "subtotal": 100,
+  "total": 100,
+  "createdAt": {
+    "$date": "2026-02-14T05:35:27.512Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:27.512Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6990138f58cc00ebce1f96a8"
+  },
+  "cliente": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "6990022928b0509b83aac873"
+      },
+      "nombre": "Boneless",
+      "cantidad": 1,
+      "precioUnitario": 115,
+      "subtotal": 115,
+      "_id": {
+        "$oid": "6990139058cc00ebce1f96a9"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 10,
+  "descuentoMonto": 11.5,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T06:17:52.017Z"
+  },
+  "subtotal": 115,
+  "total": 103.5,
+  "createdAt": {
+    "$date": "2026-02-14T06:17:52.039Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:17:52.039Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6990149c58cc00ebce1f9811"
+  },
+  "cliente": {
+    "$oid": "698aa9a4479914ee2ff4a92c"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "698805d90b2dff4e921d4aea"
+      },
+      "nombre": "Café Espresso",
+      "cantidad": 3,
+      "precioUnitario": 60,
+      "subtotal": 180,
+      "_id": {
+        "$oid": "6990149c58cc00ebce1f9812"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 5,
+  "descuentoMonto": 9,
+  "metodoPago": "tarjeta",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T06:22:20.582Z"
+  },
+  "subtotal": 180,
+  "total": 171,
+  "createdAt": {
+    "$date": "2026-02-14T06:22:20.589Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:22:20.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699014c858cc00ebce1f99c2"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "69881d4f0b2dff4e921d4b0e"
+      },
+      "nombre": "Té caliente",
+      "cantidad": 1,
+      "precioUnitario": 40,
+      "subtotal": 40,
+      "_id": {
+        "$oid": "699014c858cc00ebce1f99c3"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-14T06:23:04.628Z"
+  },
+  "subtotal": 40,
+  "total": 40,
+  "createdAt": {
+    "$date": "2026-02-14T06:23:04.631Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:23:04.631Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69932a8cb50009b828ce1eb9"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "69932a8cb50009b828ce1eba"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-16T14:32:44.671Z"
+  },
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-16T14:32:44.680Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T14:32:44.680Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69932a8fb50009b828ce2070"
+  },
+  "cliente": null,
+  "productos": [
+    {
+      "producto": {
+        "$oid": "697700ff6d94ef1381ef2841"
+      },
+      "nombre": "Café Americano",
+      "cantidad": 1,
+      "precioUnitario": 45,
+      "subtotal": 45,
+      "_id": {
+        "$oid": "69932a8fb50009b828ce2071"
+      }
+    }
+  ],
+  "descuentoPorcentaje": 0,
+  "descuentoMonto": 0,
+  "metodoPago": "efectivo",
+  "estado": "completada",
+  "usuario": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "fecha": {
+    "$date": "2026-02-16T14:32:47.254Z"
+  },
+  "subtotal": 45,
+  "total": 45,
+  "createdAt": {
+    "$date": "2026-02-16T14:32:47.259Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T14:32:47.259Z"
+  },
+  "__v": 0
+}]
