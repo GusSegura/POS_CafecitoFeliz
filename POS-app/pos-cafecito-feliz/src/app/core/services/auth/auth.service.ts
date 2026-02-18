@@ -16,7 +16,7 @@ export interface User {
 })
 export class AuthService {
   private baseUrl = environment.BACK_URL;
-  private API = `${environment.BACK_URL}auth`;
+  private API = `${environment.BACK_URL}/auth`;
   private userSubject = new BehaviorSubject<User | null>(this.getUserFromStorage());
   public user$ = this.userSubject.asObservable();
 
