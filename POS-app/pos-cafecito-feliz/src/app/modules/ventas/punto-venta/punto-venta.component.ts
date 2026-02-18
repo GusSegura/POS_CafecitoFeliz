@@ -8,6 +8,7 @@ import { VentaService } from '../../../core/services/venta/venta.service';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { DashboardService } from '../../../core/services/dashboard/dashboard.service';
+import { environment } from '../../../../environments/environment.prod';
 
 
 
@@ -158,11 +159,10 @@ export class PuntoVentaComponent implements OnInit {
 
   // AYUDAS VISUALES para el cliente
 
-  getImageUrl(imagenPath: string): string {
-
-    if (!imagenPath) return 'http://localhost:3000/uploads/productos/default-producto.png';
-    return imagenPath.startsWith('http') ? imagenPath : `http://localhost:3000${imagenPath}`;
-  }
+getImageUrl(imagenPath: string): string {
+  if (!imagenPath) return `${environment.BACK_URL}/uploads/productos/default-producto.png`;
+  return imagenPath.startsWith('http') ? imagenPath : `${environment.BACK_URL}${imagenPath}`;
+}
 
   getStockClass(stock: number): string {
     if (stock === 0) return 'text-danger fw-bold';
