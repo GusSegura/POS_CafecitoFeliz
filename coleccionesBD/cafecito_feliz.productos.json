@@ -1,0 +1,665 @@
+[{
+  "_id": {
+    "$oid": "697700ff6d94ef1381ef2841"
+  },
+  "nombre": "Café Americano",
+  "descripcion": "Clásico café negro, suave y aromático.",
+  "precio": 45,
+  "stock": 72,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-01-26T05:51:59.671Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T14:32:47.268Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603307550-788895536.jpg"
+},
+{
+  "_id": {
+    "$oid": "697850612df8861f09b802c1"
+  },
+  "nombre": "Café Capuchino",
+  "descripcion": "Café espresso con leche vaporizada y una capa densa de espuma cremosa.",
+  "precio": 60,
+  "stock": 29,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-01-27T05:42:57.843Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:16.030Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603326287-990669222.webp"
+},
+{
+  "_id": {
+    "$oid": "698804320b2dff4e921d4ae3"
+  },
+  "nombre": "Café de olla",
+  "descripcion": "Café de olla con canela y endulzado con piloncillo",
+  "precio": 40,
+  "stock": 37,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:34:10.614Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:16.055Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603343781-284386097.jpg"
+},
+{
+  "_id": {
+    "$oid": "698804a10b2dff4e921d4ae6"
+  },
+  "nombre": "Café cortado",
+  "descripcion": "Espresso con una pequeña cantidad de leche caliente o vaporizada",
+  "precio": 50,
+  "stock": 27,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:36:01.098Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:27.523Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603372824-573624987.jpg"
+},
+{
+  "_id": {
+    "$oid": "698805d90b2dff4e921d4aea"
+  },
+  "nombre": "Café Espresso",
+  "descripcion": "Concentrado de café de alta calidad, preparado al momento y que realza la riqueza del grano en cada gota",
+  "precio": 60,
+  "stock": 27,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:41:13.883Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:22:20.631Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603382158-471574859.jpg"
+},
+{
+  "_id": {
+    "$oid": "6988061d0b2dff4e921d4aed"
+  },
+  "nombre": "Café Moca",
+  "descripcion": "Café con leche de estilo capuchino, elaborada con una mezcla de espresso, leche vaporizada y chocolate",
+  "precio": 65,
+  "stock": 54,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:42:22.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:00:14.507Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603397639-810341256.jpg"
+},
+{
+  "_id": {
+    "$oid": "698806630b2dff4e921d4af0"
+  },
+  "nombre": "Café Frapuchino",
+  "descripcion": "Bebida helada y cremosa a base de café, leche, azúcar y abundante hielo",
+  "precio": 70,
+  "stock": 32,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:43:31.154Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:38:43.664Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603406972-802940545.jpg"
+},
+{
+  "_id": {
+    "$oid": "698806cd0b2dff4e921d4af3"
+  },
+  "nombre": "Café Latte",
+  "descripcion": "Bebida a base de espresso y leche, caracterizada por ser cremosa y suave",
+  "precio": 50,
+  "stock": 36,
+  "categoria": "café",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:45:18.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:27.532Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603418628-735690325.jpg"
+},
+{
+  "_id": {
+    "$oid": "6988072e0b2dff4e921d4af6"
+  },
+  "nombre": "Té Chai",
+  "descripcion": "Té negro intenso infusionado con una mezcla de especias aromáticas",
+  "precio": 85,
+  "stock": 53,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:46:54.307Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:11:31.701Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603426767-824632005.jpg"
+},
+{
+  "_id": {
+    "$oid": "698807820b2dff4e921d4af9"
+  },
+  "nombre": "Chocolate",
+  "descripcion": "Bebida caliente preparada de cacao y leche",
+  "precio": 70,
+  "stock": 35,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:48:18.812Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:50:55.192Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603437216-989154049.jpg"
+},
+{
+  "_id": {
+    "$oid": "698807c40b2dff4e921d4afc"
+  },
+  "nombre": "Limonada",
+  "descripcion": "Bebida de fruta preparada con agua mineral o natural",
+  "precio": 70,
+  "stock": 19,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:49:24.107Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T02:07:50.370Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603454350-111274385.webp"
+},
+{
+  "_id": {
+    "$oid": "698807ed0b2dff4e921d4aff"
+  },
+  "nombre": "Naranjada",
+  "descripcion": "Bebida de fruta preparada con agua mineral o natural",
+  "precio": 70,
+  "stock": 29,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:50:05.202Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T20:58:54.380Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603464846-867090611.jpg"
+},
+{
+  "_id": {
+    "$oid": "6988083d0b2dff4e921d4b04"
+  },
+  "nombre": "Mangonada",
+  "descripcion": "Bebida de fruta fresca con hielo (solo en temporada)",
+  "precio": 80,
+  "stock": 34,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T03:51:25.693Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:50:37.361Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603475244-519544991.jpg"
+},
+{
+  "_id": {
+    "$oid": "698816880b2dff4e921d4b08"
+  },
+  "nombre": "Malteada de Chocolate",
+  "descripcion": "Bebida fría y cremosa elaborada licuando helado de chocolate y leche",
+  "precio": 95,
+  "stock": 18,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T04:52:24.711Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:54:40.454Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603486773-160020761.jpg"
+},
+{
+  "_id": {
+    "$oid": "698816bd0b2dff4e921d4b0b"
+  },
+  "nombre": "Malteada de Fresa",
+  "descripcion": "Bebida fría y cremosa elaborada licuando helado de fresa y leche",
+  "precio": 95,
+  "stock": 18,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T04:53:17.751Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T04:00:50.676Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603507116-25028428.jpg"
+},
+{
+  "_id": {
+    "$oid": "69881d4f0b2dff4e921d4b0e"
+  },
+  "nombre": "Té caliente",
+  "descripcion": "Té de diferentes sabores (Manzanilla, Canela, Yerbabuena, limon)",
+  "precio": 40,
+  "stock": 74,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T05:21:19.510Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:23:04.667Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603523129-522550782.jpg"
+},
+{
+  "_id": {
+    "$oid": "69881d960b2dff4e921d4b11"
+  },
+  "nombre": "Tizana",
+  "descripcion": "Infusión aromática preparada con frutas deshidratadas, hierbas, flores o especias",
+  "precio": 70,
+  "stock": 0,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T05:22:30.631Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T03:57:14.250Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603536881-736685067.jpg"
+},
+{
+  "_id": {
+    "$oid": "69881dcf0b2dff4e921d4b14"
+  },
+  "nombre": "Tizana Fria",
+  "descripcion": "Bebida refrescante hecha a base de una infusión de hierbas y/o frutas, servida con hielo",
+  "precio": 70,
+  "stock": 18,
+  "categoria": "bebida",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T05:23:27.122Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:50:55.216Z"
+  },
+  "__v": 0,
+  "imagen": "/uploads/productos/producto-1770603548079-433604281.jpg"
+},
+{
+  "_id": {
+    "$oid": "69890fd5566915a8ddced0cd"
+  },
+  "nombre": "Club Sandwich",
+  "descripcion": "Sándwich con jamón, beicon, pollo, queso, lechuga y otros ingredientes",
+  "precio": 95,
+  "stock": 28,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1770603282777-964923363.webp",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T22:36:05.407Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:52:26.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69893baef10c6777a8ae51c0"
+  },
+  "nombre": "Hamburguesa",
+  "descripcion": "Con carne de res, verdura fresca y aderezo",
+  "precio": 110,
+  "stock": 18,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1770601390314-462222780.webp",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T01:43:10.423Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T14:31:58.207Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69893c68f10c6777a8ae51ca"
+  },
+  "nombre": "Panini",
+  "descripcion": "Pan panini con carne, queso y verduras",
+  "precio": 120,
+  "stock": 25,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1770601576171-351364435.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T01:46:16.197Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:11:31.713Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989447df10c6777a8ae520e"
+  },
+  "nombre": "Papas a la francesa",
+  "descripcion": "Tiras de papa fritas en aceite con sal",
+  "precio": 80,
+  "stock": 34,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1770603645417-269485783.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:20:45.504Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:50:55.223Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69894503f10c6777a8ae5211"
+  },
+  "nombre": "Papas Gajo",
+  "descripcion": "Gajos de papa fritos y sazonados con sal y especias",
+  "precio": 80,
+  "stock": 44,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1770603779640-418434650.png",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:22:59.709Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:17:40.967Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989457ef10c6777a8ae5214"
+  },
+  "nombre": "CupKake",
+  "descripcion": "Pastelito de vainilla y betún sabor fresa",
+  "precio": 40,
+  "stock": 11,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770603902334-401951466.webp",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:25:02.388Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:36:25.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989466ef10c6777a8ae5217"
+  },
+  "nombre": "Pastel de 3 leches",
+  "descripcion": "Rebanada de pastel de 3 leches",
+  "precio": 50,
+  "stock": 5,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604142083-813014.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:29:02.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:53:13.329Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69894690f10c6777a8ae521a"
+  },
+  "nombre": "Pastel de cajeta",
+  "descripcion": "Rebanada de pastel de cajeta",
+  "precio": 50,
+  "stock": 4,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604176468-39138606.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:29:36.513Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:53:15.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698946b4f10c6777a8ae521d"
+  },
+  "nombre": "Pastel de chocolate",
+  "descripcion": "Rebanada de pastel de chocolate",
+  "precio": 55,
+  "stock": 17,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604212278-797425839.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:30:12.372Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:48.063Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698946d8f10c6777a8ae5220"
+  },
+  "nombre": "Pastel de fresa",
+  "descripcion": "Rebanada de pastel de fresa adornado con una cereza",
+  "precio": 55,
+  "stock": 11,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604248217-41717386.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:30:48.263Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:36:08.068Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69894703f10c6777a8ae5223"
+  },
+  "nombre": "Pastel de Snicker",
+  "descripcion": "Rebanada de pastel sabor Snicker",
+  "precio": 60,
+  "stock": 0,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604291519-1277897.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:31:31.601Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-09T02:31:31.601Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69894752f10c6777a8ae5226"
+  },
+  "nombre": "Tarta de frutas",
+  "descripcion": "Tarta pequeña adornada con frutas de temporada",
+  "precio": 60,
+  "stock": 4,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604370586-673079091.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:32:50.636Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:53:15.062Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69894778f10c6777a8ae5229"
+  },
+  "nombre": "Pastel trufa",
+  "descripcion": "Rebanada de pastel de trufa de chocolate",
+  "precio": 60,
+  "stock": 4,
+  "categoria": "postre",
+  "imagen": "/uploads/productos/producto-1770604408661-620089674.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T02:33:28.702Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:53:14.336Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699001ce28b0509b83aac868"
+  },
+  "nombre": "Boneless",
+  "descripcion": "Boneless de pollo bañados con salsa a su elección",
+  "precio": 115,
+  "stock": 32,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1771045325954-253398105.jpg",
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-14T05:02:06.023Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:02:55.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6990022928b0509b83aac873"
+  },
+  "nombre": "Boneless",
+  "descripcion": "Boneless de pollo bañados con la salsa a su elección",
+  "precio": 115,
+  "stock": 31,
+  "categoria": "alimento",
+  "imagen": "/uploads/productos/producto-1771045575664-929134368.jpg",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-14T05:03:37.978Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:17:52.068Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6993227db50009b828ce15cf"
+  },
+  "nombre": "Producto de prueba Cypress",
+  "descripcion": "",
+  "precio": 25,
+  "stock": 10,
+  "categoria": "café",
+  "imagen": "/uploads/productos/default-producto.png",
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-16T13:58:21.846Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T14:03:01.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69932379b50009b828ce1a53"
+  },
+  "nombre": "Producto de prueba Cypress",
+  "descripcion": "",
+  "precio": 25,
+  "stock": 10,
+  "categoria": "café",
+  "imagen": "/uploads/productos/default-producto.png",
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-16T14:02:33.352Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T14:03:06.358Z"
+  },
+  "__v": 0
+}]

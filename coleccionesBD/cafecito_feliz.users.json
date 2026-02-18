@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "69818d193349c9bfc227f26d"
+  },
+  "nombre": "Gustavo Segura A.",
+  "email": "admin@cafecito-feliz.com",
+  "password": "$2b$10$KeqKkFaP54VWzZ7XfJsCG.nzupNW8A.kz57M177adw5.fXqPRjleG",
+  "role": "admin",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-03T05:52:25.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T05:52:25.227Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698cf9702a6a6c726ee74356"
+  },
+  "nombre": "Mario Gámez Perez (Matutino)",
+  "email": "cajero@cafecito-feliz.com",
+  "password": "$2b$10$GwRwvUZtz8PHKzUTc7ANGum73Gw/84JD4.Y1S4WvTpyGdlb/1l8Ga",
+  "role": "cajero",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-11T21:49:36.808Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:41:06.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d4c182a6a6c726ee74be3"
+  },
+  "nombre": "Vianney Silva Alba (Vespertino)",
+  "email": "cajero1@cafecito-feliz.com",
+  "password": "$2b$10$o1rNignKMbkTLescJ8j7N.3V9g8Oo3l9riFi06cPrui/7hhhXR4B2",
+  "role": "cajero",
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-12T03:42:16.376Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T04:04:34.102Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ffec628b0509b83aac268"
+  },
+  "nombre": "Eduardo Segura Pedroza",
+  "email": "lolofaraveli@cafecitofeliz.com",
+  "password": "$2b$10$L9ruzpVrFsNu2IBRDyrDSu7ak2wLDkSQvPLQTTPADEhMvT904JhY2",
+  "role": "admin",
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-14T04:49:10.181Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:50:35.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ffee428b0509b83aac26e"
+  },
+  "nombre": "Alejandro Segura Pedroza",
+  "email": "alex@cafeclito-feliz.com.mx",
+  "password": "$2b$10$R2Knu6Im.GxL9Gct8a7/9uyx6mN6f0XtWRiISYAOHRVUiwMArYPUG",
+  "role": "cajero",
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-14T04:49:40.958Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:50:47.971Z"
+  },
+  "__v": 0
+}]

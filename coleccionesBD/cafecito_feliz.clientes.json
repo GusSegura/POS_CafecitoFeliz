@@ -1,0 +1,289 @@
+[{
+  "_id": {
+    "$oid": "697700ca6d94ef1381ef283f"
+  },
+  "nombre": "Juan Ernesto Pérez Díaz",
+  "email": "juan_epd@example.com.mx",
+  "telefono": "4494567890",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-01-26T05:51:06.901Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:54:40.458Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69770353e0afa2777accd4b4"
+  },
+  "nombre": "María Rosales García",
+  "email": "maria_rg@correo.com",
+  "telefono": "4491234568",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-01-26T06:01:55.220Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:01:25.226Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "697850832df8861f09b802c4"
+  },
+  "nombre": "Pedro Ramírez López",
+  "email": "pedro.ramirez@cafecito.com",
+  "telefono": "4498234567",
+  "purchasesCount": 7,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-01-27T05:43:31.360Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:17:52.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6987d71ad68bbcba73352c33"
+  },
+  "nombre": "Nadia Lorena Pedroza",
+  "email": "nadia.rios@ng-store.com",
+  "telefono": "4499102030",
+  "purchasesCount": 9,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-08T00:21:47.013Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T04:00:50.687Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698a4a51479914ee2ff4a823"
+  },
+  "nombre": "Lourdes Bravo",
+  "email": "luly@correo.com",
+  "telefono": "4499632147",
+  "purchasesCount": 4,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-09T20:57:53.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:53:18.489Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa7a6479914ee2ff4a89f"
+  },
+  "nombre": "Alberto Medina Lopez",
+  "email": "beto@albert.com",
+  "telefono": "4491234568",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:36:06.242Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:11:31.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa7e7479914ee2ff4a8a3"
+  },
+  "nombre": "Brenda Donovan Hiks",
+  "email": "donovan@hicks.com",
+  "telefono": "4498529634",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:37:11.448Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T22:17:40.971Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa811479914ee2ff4a8a7"
+  },
+  "nombre": "Claudia Gutierrez",
+  "email": "guti_clau@gmail.com",
+  "telefono": "3352896417",
+  "purchasesCount": 1,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:37:53.546Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:06.030Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa842479914ee2ff4a8ab"
+  },
+  "nombre": "Daniela Echeverría Durán",
+  "email": "dany-eche@hotmail.com",
+  "telefono": "4498968965",
+  "purchasesCount": 1,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:38:42.269Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:49:23.110Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa87f479914ee2ff4a8af"
+  },
+  "nombre": "Eréndira Hernandez Díaz",
+  "email": "ere_hdz@company.com",
+  "telefono": "4498965472",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:39:43.513Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T14:51:07.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa8b2479914ee2ff4a8b3"
+  },
+  "nombre": "Fhernando Montoya Solís",
+  "email": "fhermon@gmail.com",
+  "telefono": "8147895632",
+  "purchasesCount": 9,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:40:34.850Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T21:50:55.227Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa90e479914ee2ff4a8b7"
+  },
+  "nombre": "Gustavo Blue Adkins",
+  "email": "gus_blue@latinmail.com",
+  "telefono": "4499157548",
+  "purchasesCount": 1,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:42:06.995Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:50:37.381Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aa9a4479914ee2ff4a92c"
+  },
+  "nombre": "Hector Fernandez Coz",
+  "email": "coz_ito@hotmail.com",
+  "telefono": "4490002225",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:44:36.842Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T06:22:20.640Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698aac2c07c7beb0b92f24f7"
+  },
+  "nombre": "Iván Bernal Salas",
+  "email": "ivan_cito@gmail.com",
+  "telefono": "4497896633",
+  "purchasesCount": 1,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-10T03:55:24.525Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T03:51:09.637Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698cf9c52a6a6c726ee74362"
+  },
+  "nombre": "Nancy Lopez Guerra",
+  "email": "nancy@correo_falso.com",
+  "telefono": "4497456321",
+  "purchasesCount": 1,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-11T21:51:01.030Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-11T21:51:27.304Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d51922a6a6c726ee75136"
+  },
+  "nombre": "Valeria Segura Pedroza",
+  "email": "valita@prueba.com.mx",
+  "telefono": "4498963214",
+  "purchasesCount": 0,
+  "activo": false,
+  "createdAt": {
+    "$date": "2026-02-12T04:05:38.594Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T04:16:00.603Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ffc2028b0509b83aac16f"
+  },
+  "nombre": "Valeria Segura Pedroza",
+  "email": "vale1000@gmail.com",
+  "telefono": "4497894123",
+  "purchasesCount": 2,
+  "activo": true,
+  "createdAt": {
+    "$date": "2026-02-14T04:37:52.661Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-14T05:35:16.057Z"
+  },
+  "__v": 0
+}]
