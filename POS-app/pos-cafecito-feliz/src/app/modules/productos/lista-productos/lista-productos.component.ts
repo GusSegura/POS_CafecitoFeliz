@@ -277,7 +277,7 @@ if (this.editMode && this.currentProductoId) {
     }
     
     // Si es una ruta relativa, agregar el dominio del backend
-    return `${environment.apiUrl.replace('/api', '')}${imagen}`;
+    return `${environment.BACK_URL.replace('/api', '')}${imagen}`;
   }
 
   deleteProducto(producto: any) {
