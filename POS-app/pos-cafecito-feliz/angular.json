@@ -28,7 +28,7 @@
               },
               {
                 "glob": "_redirects",
-                "input": "public",
+                "input": "./",
                 "output": "/"
               },
               "src/favicon.ico",
