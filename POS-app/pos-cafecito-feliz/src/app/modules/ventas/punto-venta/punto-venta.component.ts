@@ -160,8 +160,8 @@ export class PuntoVentaComponent implements OnInit {
   // AYUDAS VISUALES para el cliente
 
 getImageUrl(imagenPath: string): string {
-  if (!imagenPath) return `${environment.BACK_URL}/uploads/productos/default-producto.png`;
-  return imagenPath.startsWith('http') ? imagenPath : `${environment.BACK_URL}${imagenPath}`;
+  if (!imagenPath) return `${environment.UPLOADS_URL}/uploads/productos/default-producto.png`;
+  return imagenPath.startsWith('http') ? imagenPath : `${environment.UPLOADS_URL}${imagenPath}`;
 }
 
   getStockClass(stock: number): string {
