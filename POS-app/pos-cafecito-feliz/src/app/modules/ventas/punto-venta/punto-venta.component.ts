@@ -275,6 +275,7 @@ imprimirTicket(venta: any) {
   const nombreCliente = venta.cliente ? venta.cliente.nombre : 'Público General';
   doc.setTextColor(0, 0, 255);
   doc.text(`Cliente: ${nombreCliente}`, 5, 38);
+  doc.setTextColor(0, 0, 0);
 
   // Cajero que atendió
   const cajero = venta.usuario?.nombre || 'Sistema';

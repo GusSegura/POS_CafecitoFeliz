@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatsService {
-  private baseUrl = 'http://localhost:3000/api/ventas';
+  private baseUrl = `${environment.BACK_URL}/ventas`;
 
   constructor(private http: HttpClient) {}
 
