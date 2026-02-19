@@ -53,48 +53,48 @@ export class DashboardComponent implements OnInit {
     this.loadStats();
   }
 
-  loadStats() {
-    this.loading = true;
+loadStats() {
+  this.loading = true;
 
-    // Cargar clientes
-    this.clienteService.getClientes().subscribe({
-      next: (res) => {
-        this.stats.totalClientes = res.total || res.clientes?.length || 0;
-      },
-      error: (err) => console.error('Error cargando clientes:', err)
-    });
+  // Cargar clientes
+  this.clienteService.getClientes().subscribe({
+    next: (res) => {
+      this.stats.totalClientes = res.total || res.clientes?.length || 0;
+    },
+    error: (err) => console.error('Error cargando clientes:', err)
+  });
 
-    // Cargar productos
-    this.productoService.getProductos().subscribe({
-      next: (res) => {
-        this.stats.totalProductos = res.total || res.productos?.length || 0;
-        
-        // Filtrar productos con stock bajo
-        this.productosStockBajo = (res.productos as Producto[])
-          ?.filter(p => p.stock <= (p.stockMinimo || 10))
-          .sort((a, b) => a.stock - b.stock)
-          .slice(0, 5) || [];
-      },
-      error: (err) => console.error('Error cargando productos:', err)
-    });
+  // Cargar productos
+  this.productoService.getProductos().subscribe({
+    next: (res) => {
+      this.stats.totalProductos = res.total || res.productos?.length || 0;
+      
+      // Filtrar productos con stock bajo
+      this.productosStockBajo = (res.productos as Producto[])
+        ?.filter(p => p.stock <= (p.stockMinimo || 10))
+        .sort((a, b) => a.stock - b.stock)
+        .slice(0, 5) || [];
+    },
+    error: (err) => console.error('Error cargando productos:', err)
+  });
 
-    // Cargar estadísticas de ventas
-    this.statsService.getEstadisticas().subscribe({
-      next: (res) => {
-        if (res.success) {
-          const est = res.estadisticas;
-          this.stats.totalVentas = est.totalVentas || 0;
-          this.stats.ventasHoy = est.ventasHoy || 0;
-          this.stats.ventasCanceladas = est.ventasCanceladas || 0;
-          this.stats.totalIngresos = parseFloat(est.totalIngresos) || 0;
-          this.stats.ingresosHoy = parseFloat(est.ingresosHoy) || 0;
-          this.stats.ingresosMes = parseFloat(est.ingresosMes) || 0;
-          this.stats.totalDescuentos = parseFloat(est.totalDescuentos) || 0;
-          this.stats.descuentosHoy = parseFloat(est.descuentosHoy) || 0;
-          this.stats.promedioVenta = parseFloat(est.promedioVenta) || 0;          
-          this.ventasEfectivo = parseFloat(est.ventasEfectivoHoy) || 0;
-          this.ventasTarjeta = parseFloat(est.ventasTarjetaHoy) || 0;
-        
+  // Cargar estadísticas de ventas
+  this.statsService.getEstadisticas().subscribe({
+    next: (res) => {
+      if (res.success) {
+        const est = res.estadisticas;
+        this.stats.totalVentas = est.totalVentas || 0;
+        this.stats.ventasHoy = est.ventasHoy || 0;
+        this.stats.ventasCanceladas = est.ventasCanceladas || 0;
+        this.stats.totalIngresos = parseFloat(est.totalIngresos) || 0;
+        this.stats.ingresosHoy = parseFloat(est.ingresosHoy) || 0;
+        this.stats.ingresosMes = parseFloat(est.ingresosMes) || 0;
+        this.stats.totalDescuentos = parseFloat(est.totalDescuentos) || 0;
+        this.stats.descuentosHoy = parseFloat(est.descuentosHoy) || 0;
+        this.stats.promedioVenta = parseFloat(est.promedioVenta) || 0;          
+        this.ventasEfectivo = parseFloat(est.ventasEfectivoHoy) || 0;
+        this.ventasTarjeta = parseFloat(est.ventasTarjetaHoy) || 0;
+      
         // Top productos
         this.topProductos = est.topProductos || [];
       }

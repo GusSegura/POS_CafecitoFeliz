@@ -273,6 +273,7 @@ imprimirTicket(venta: any) {
   doc.text(`Fecha: ${new Date(venta.createdAt).toLocaleString()}`, 5, 33);
 
   const nombreCliente = venta.cliente ? venta.cliente.nombre : 'Público General';
+  doc.setTextColor(0, 0, 255);
   doc.text(`Cliente: ${nombreCliente}`, 5, 38);
 
   // Cajero que atendió
@@ -281,7 +282,6 @@ imprimirTicket(venta: any) {
 
   // Método de pago
 const metodo = (venta.metodoPago || 'efectivo').toUpperCase();
-doc.setTextColor(0, 0, 255);
 doc.text(`Pago: ${metodo}`, 5, 48);
 doc.setTextColor(0, 0, 0);
 
